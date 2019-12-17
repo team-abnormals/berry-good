@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smoking",
+  "ingredient": {
+    "item": "berry_good:mince"
+  },
+  "result": "berry_good:meatballs",
+  "experience": 0.35,
+  "cookingtime": 100
+}
