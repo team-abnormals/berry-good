@@ -17,5 +17,5 @@ public class BGItems {
     public static final RegistryObject<Item> SWEET_BERRY_MINCE = RegistryUtils.createItem("sweet_berry_mince", () -> new Item(new Item.Properties().group(ItemGroup.FOOD).food(BGFoods.MEATBALLS(false))));
 	public static final RegistryObject<Item> SWEET_BERRY_MEATBALLS = RegistryUtils.createItem("sweet_berry_meatballs", () -> new Item(new Item.Properties().group(ItemGroup.FOOD).food(BGFoods.MEATBALLS(true))));
 	
-    public static final RegistryObject<Item> SWEET_BERRY_SEEDS = RegistryUtils.createItem("sweet_berry_seeds", () -> new BlockNamedItem(BGBlocks.SWEET_BERRY_BUSH_SEEDS.get(), new Item.Properties().group(ItemGroup.MISC)));
+    public static final RegistryObject<Item> SWEET_BERRY_PIPS = RegistryUtils.createItem("sweet_berry_pips", () -> new BlockNamedItem(BGBlocks.SWEET_BERRY_BUSH_PIPS.get(), new Item.Properties().group(ItemGroup.MISC)));
 }

@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "berry_good:item/sweet_berry_seeds"
+        "layer0": "berry_good:item/sweet_berry_mince"
     }
 }

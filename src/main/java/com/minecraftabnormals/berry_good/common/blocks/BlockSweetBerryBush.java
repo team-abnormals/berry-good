@@ -21,7 +21,7 @@ public class BlockSweetBerryBush extends BushBlock {
 	   }
 
 	   public ItemStack getItem(IBlockReader worldIn, BlockPos pos, BlockState state) {
-		      return new ItemStack(BGItems.SWEET_BERRY_SEEDS.get());
+		      return new ItemStack(BGItems.SWEET_BERRY_PIPS.get());
 		   }
 	   
 	   public void tick(BlockState state, World worldIn, BlockPos pos, Random random) {
