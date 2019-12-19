@@ -7,7 +7,7 @@ import net.minecraft.block.ComposterBlock;
 public class BGCompostables {
 
 	public static void registerCompostables() {
-		ComposterBlock.registerCompostable(0.3F, BGItems.SWEET_BERRY_SEEDS.get());
+		ComposterBlock.registerCompostable(0.3F, BGItems.SWEET_BERRY_PIPS.get());
 	}
 	
 }
