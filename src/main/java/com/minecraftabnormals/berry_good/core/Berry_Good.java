@@ -1,16 +1,19 @@
 package com.minecraftabnormals.berry_good.core;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import com.minecraftabnormals.berry_good.core.proxy.ClientProxy;
 import com.minecraftabnormals.berry_good.core.proxy.ServerProxy;
 import com.minecraftabnormals.berry_good.core.registry.BGBlocks;
 import com.minecraftabnormals.berry_good.core.registry.BGItems;
+import com.minecraftabnormals.berry_good.core.registry.other.BGCompostables;
+
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 @Mod("berry_good")
 public class Berry_Good {
@@ -28,5 +31,6 @@ public class Berry_Good {
     }
 
     private void onCommonSetup(FMLCommonSetupEvent event) {
+		BGCompostables.registerCompostables();
     }
 }
