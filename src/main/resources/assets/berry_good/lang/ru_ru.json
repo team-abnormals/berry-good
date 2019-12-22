@@ -1,0 +1,11 @@
+{
+  "_comment": "Блоки",
+  
+  "block.berry_good.sweet_berry_bush_pips": "Косточки сладких ягод",
+
+  "_comment": "Предметы",
+
+  "item.berry_good.sweet_berry_pips": "Косточки сладких ягод",
+  "item.berry_good.sweet_berry_mince": "Фарш из сладких ягод",
+  "item.berry_good.sweet_berry_meatballs": "Тефтельки из сладких ягод"
+}
