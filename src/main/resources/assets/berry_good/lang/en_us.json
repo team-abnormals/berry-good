@@ -2,6 +2,9 @@
   "_comment": "Blocks",
   
   "block.berry_good.sweet_berry_bush_pips": "Sweet Berry Pips",
+
+  "_comment": "Items",
+
   "item.berry_good.sweet_berry_pips": "Sweet Berry Pips",
   "item.berry_good.sweet_berry_mince": "Sweet Berry Mince",
   "item.berry_good.sweet_berry_meatballs": "Sweet Berry Meatballs"
