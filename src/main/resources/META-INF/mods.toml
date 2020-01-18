@@ -6,7 +6,7 @@ issueTrackerURL="https://github.com/minecraftabnormals/Berry-Good/issues"
 [[mods]]
     modId="berry_good"
     namespace="berry_good"
-    version="1.0.2"
+    version="1.0.3"
     displayName="Berry Good"
     authors="SmellyModder, Cameron, Five"
     description='''Makes sweet berries less annoying to eat and adds more berry related content'''
