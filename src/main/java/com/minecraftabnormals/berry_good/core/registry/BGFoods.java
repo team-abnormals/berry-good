@@ -7,6 +7,6 @@ import net.minecraft.potion.Effects;
 public class BGFoods {
 
 	public static final Food MEATBALLS(boolean cooked) {
-		return cooked ? new Food.Builder().hunger(10).saturation(1.0F).build() : new Food.Builder().hunger(5).saturation(0.4F).build();
+		return cooked ? new Food.Builder().hunger(10).saturation(0.7F).build() : new Food.Builder().hunger(5).saturation(0.4F).build();
 	}
 }
