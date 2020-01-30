@@ -4,18 +4,22 @@ import java.util.Random;
 
 import com.minecraftabnormals.berry_good.core.registry.BGItems;
 
-import net.minecraft.block.*;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.BushBlock;
+import net.minecraft.block.IGrowable;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 
 public class BlockSweetBerryBush extends BushBlock implements IGrowable {
 
@@ -35,7 +39,7 @@ public class BlockSweetBerryBush extends BushBlock implements IGrowable {
 	}
 
 	@Override
-	public void tick(BlockState state, World worldIn, BlockPos pos, Random random) {
+	public void tick(BlockState state, ServerWorld worldIn, BlockPos pos, Random random) {
 		super.tick(state, worldIn, pos, random);
 		if (worldIn.getLightSubtracted(pos.up(), 0) >= 9 && net.minecraftforge.common.ForgeHooks.onCropsGrowPre(worldIn, pos, state, random.nextInt(5) == 0)) {
 			worldIn.setBlockState(pos, Blocks.SWEET_BERRY_BUSH.getDefaultState(), 2);
@@ -61,7 +65,7 @@ public class BlockSweetBerryBush extends BushBlock implements IGrowable {
 	}
 
 	@Override
-	public void grow(World worldIn, Random rand, BlockPos pos, BlockState state) {
+	public void grow(ServerWorld worldIn, Random rand, BlockPos pos, BlockState state) {
 		worldIn.setBlockState(pos, Blocks.SWEET_BERRY_BUSH.getDefaultState(), 2);
 	}
 
