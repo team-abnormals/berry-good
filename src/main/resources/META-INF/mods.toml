@@ -11,9 +11,24 @@ issueTrackerURL="https://github.com/minecraftabnormals/Berry-Good/issues"
     authors="SmellyModder, Cameron, Five"
     description='''Makes sweet berries less annoying to eat and adds more berry related content'''
     displayURL=""
-    [[dependencies.berry_good]]
-        modId="forge"
-        mandatory=true
-        versionRange="[${forge_version},)"
-        ordering="NONE"
-        side="BOTH"
+
+	[[dependencies.berry_good]]
+	    modId="forge"
+	    mandatory=true
+	    versionRange="[31.1.46,)"
+	    ordering="NONE"
+	    side="BOTH"
+	
+	[[dependencies.berry_good]]
+	    modId="abnormals_core"
+	    mandatory=true
+	    versionRange="[1.0.5,)"
+	    ordering="AFTER"
+	    side="BOTH"
+	
+	[[dependencies.berry_good]]
+	    modId="minecraft"
+	    mandatory=true
+	    versionRange="[1.15.2]"
+	    ordering="NONE"
+	    side="BOTH"
