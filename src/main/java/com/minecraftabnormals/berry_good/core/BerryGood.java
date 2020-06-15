@@ -52,6 +52,8 @@ public class BerryGood {
 	}
 
 	private void clientSetup(FMLClientSetupEvent event) {
-		RenderTypeLookup.setRenderLayer(BGRegistry.SWEET_BERRY_BUSH_PIPS.get(), RenderType.cutout());
+		DeferredWorkQueue.runLater(() -> {
+			RenderTypeLookup.setRenderLayer(BGRegistry.SWEET_BERRY_BUSH_PIPS.get(), RenderType.cutout());
+		});
 	}
 }
