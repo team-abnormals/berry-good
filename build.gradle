@@ -15,7 +15,7 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
-version = '2.0.0'
+version = '3.0.0'
 group = 'com.minecraftabnormals.berry_good' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'Berry-Good-1.16.1'
 
