@@ -23,11 +23,11 @@ public class BGRegistry {
 	public static final RegistryObject<Block> SWEET_BERRY_BUSH_PIPS = HELPER.createBlockNoItem("sweet_berry_bush_pips", () -> new BlockSweetBerryBush(Block.Properties.from(Blocks.SWEET_BERRY_BUSH)));
 
 	public static final RegistryObject<Item> SWEET_BERRIES 			= REPLACER.createItem("sweet_berries", () -> new Item((new Item.Properties()).group(ItemGroup.FOOD).food(Foods.SWEET_BERRIES)));
-	public static final RegistryObject<Item> SWEET_BERRY_MINCE 		= HELPER.createItem("sweet_berry_mince", () -> new Item(new Item.Properties().group(ItemGroup.FOOD).food(MEATBALLS(true))));
-	public static final RegistryObject<Item> SWEET_BERRY_MEATBALLS 	= HELPER.createItem("sweet_berry_meatballs", () -> new Item(new Item.Properties().group(ItemGroup.FOOD).food(MEATBALLS(false))));
+	public static final RegistryObject<Item> SWEET_BERRY_MINCE 		= HELPER.createItem("sweet_berry_mince", () -> new Item(new Item.Properties().group(ItemGroup.FOOD).food(getMeatValue(false))));
+	public static final RegistryObject<Item> SWEET_BERRY_MEATBALLS 	= HELPER.createItem("sweet_berry_meatballs", () -> new Item(new Item.Properties().group(ItemGroup.FOOD).food(getMeatValue(true))));
 	public static final RegistryObject<Item> SWEET_BERRY_PIPS 		= HELPER.createItem("sweet_berry_pips", () -> new BlockNamedItem(SWEET_BERRY_BUSH_PIPS.get(), new Item.Properties().group(ItemGroup.MISC)));
 
-	public static final Food MEATBALLS(boolean cooked) {
+	public static final Food getMeatValue(boolean cooked) {
 		return cooked ? new Food.Builder().hunger(10).saturation(0.7F).build() : new Food.Builder().hunger(5).saturation(0.2F).build();
 	}
 }
