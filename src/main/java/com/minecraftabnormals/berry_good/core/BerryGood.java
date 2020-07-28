@@ -4,8 +4,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.minecraftabnormals.berry_good.core.registry.BGRegistry;
-import com.teamabnormals.abnormals_core.core.utils.DataUtils;
-import com.teamabnormals.abnormals_core.core.utils.RegistryHelper;
+import com.minecraftabnormals.abnormals_core.core.utils.DataUtils;
+import com.minecraftabnormals.abnormals_core.core.utils.RegistryHelper;
 
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;

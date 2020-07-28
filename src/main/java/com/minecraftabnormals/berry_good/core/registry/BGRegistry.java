@@ -2,7 +2,7 @@ package com.minecraftabnormals.berry_good.core.registry;
 
 import com.minecraftabnormals.berry_good.common.block.BlockSweetBerryBush;
 import com.minecraftabnormals.berry_good.core.BerryGood;
-import com.teamabnormals.abnormals_core.core.utils.RegistryHelper;
+import com.minecraftabnormals.abnormals_core.core.utils.RegistryHelper;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;

@@ -15,28 +15,23 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
-version = '3.0.0'
-group = 'com.minecraftabnormals.berry_good' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+version = '3.0.1'
+group = 'com.minecraftabnormals.berry_good'
 archivesBaseName = 'Berry-Good-1.16.1'
 
-sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
+sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8'
 
 minecraft {
-    mappings channel: 'snapshot', version: '20200514-1.16'
+    mappings channel: 'snapshot', version: '20200723-1.16.1'
     accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
 
     runs {
         client {
             workingDirectory project.file('run')
-
-            // Recommended logging data for a userdev environment
             property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
-
-            // Recommended logging level for the console
             property 'forge.logging.console.level', 'debug'
-
             mods {
-                examplemod {
+                berry_good {
                     source sourceSets.main
                 }
             }
@@ -44,15 +39,10 @@ minecraft {
 
         server {
             workingDirectory project.file('run')
-
-            // Recommended logging data for a userdev environment
             property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
-
-            // Recommended logging level for the console
             property 'forge.logging.console.level', 'debug'
-
             mods {
-                examplemod {
+                berry_good {
                     source sourceSets.main
                 }
             }
@@ -60,17 +50,11 @@ minecraft {
 
         data {
             workingDirectory project.file('run')
-
-            // Recommended logging data for a userdev environment
             property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
-
-            // Recommended logging level for the console
             property 'forge.logging.console.level', 'debug'
-
             args '--mod', 'examplemod', '--all', '--output', file('src/generated/resources/')
-
             mods {
-                examplemod {
+                berry_good {
                     source sourceSets.main
                 }
             }
@@ -79,20 +63,20 @@ minecraft {
 }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.16.1-32.0.47'
-    implementation fg.deobf("curse.maven:abnormals-core:2989106")
+    minecraft 'net.minecraftforge:forge:1.16.1-32.0.88'
+    implementation fg.deobf("curse.maven:abnormals-core:3016902")
 }
 
 jar {
     manifest {
         attributes([
-            "Specification-Title": "examplemod",
-            "Specification-Vendor": "examplemodsareus",
-            "Specification-Version": "1", // We are version 1 of ourselves
-            "Implementation-Title": project.name,
-            "Implementation-Version": "${version}",
-            "Implementation-Vendor" :"examplemodsareus",
-            "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
+        	"Specification-Title": "Berry Good",
+            	"Specification-Vendor": "Team Abnormals",
+            	"Specification-Version": "1",
+            	"Implementation-Title": project.name,
+            	"Implementation-Version": "${version}",
+            	"Implementation-Vendor": "Team Abnormals",
+            	"Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
         ])
     }
 }
