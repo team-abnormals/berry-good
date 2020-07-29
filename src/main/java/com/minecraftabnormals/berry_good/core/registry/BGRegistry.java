@@ -1,8 +1,8 @@
 package com.minecraftabnormals.berry_good.core.registry;
 
-import com.minecraftabnormals.berry_good.common.block.BlockSweetBerryBush;
+import com.minecraftabnormals.berry_good.common.block.SweetBerryPipsBlock;
 import com.minecraftabnormals.berry_good.core.BerryGood;
-import com.minecraftabnormals.abnormals_core.core.utils.RegistryHelper;
+import com.teamabnormals.abnormals_core.core.utils.RegistryHelper;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -20,7 +20,7 @@ public class BGRegistry {
 	public static final RegistryHelper HELPER 	= BerryGood.REGISTRY_HELPER;
 	public static final RegistryHelper REPLACER = BerryGood.REGISTRY_REPLACER;
 
-	public static final RegistryObject<Block> SWEET_BERRY_BUSH_PIPS = HELPER.createBlockNoItem("sweet_berry_bush_pips", () -> new BlockSweetBerryBush(Block.Properties.from(Blocks.SWEET_BERRY_BUSH)));
+	public static final RegistryObject<Block> SWEET_BERRY_BUSH_PIPS = HELPER.createBlockNoItem("sweet_berry_bush_pips", () -> new SweetBerryPipsBlock(Block.Properties.from(Blocks.SWEET_BERRY_BUSH)));
 
 	public static final RegistryObject<Item> SWEET_BERRIES 			= REPLACER.createItem("sweet_berries", () -> new Item((new Item.Properties()).group(ItemGroup.FOOD).food(Foods.SWEET_BERRIES)));
 	public static final RegistryObject<Item> SWEET_BERRY_MINCE 		= HELPER.createItem("sweet_berry_mince", () -> new Item(new Item.Properties().group(ItemGroup.FOOD).food(getMeatValue(false))));

@@ -21,11 +21,11 @@ import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
-public class BlockSweetBerryBush extends BushBlock implements IGrowable {
+public class SweetBerryPipsBlock extends BushBlock implements IGrowable {
 
 	private static final VoxelShape SHAPE = Block.makeCuboidShape(3.0D, 0.0D, 3.0D, 13.0D, 8.0D, 13.0D);
 
-	public BlockSweetBerryBush(Block.Properties properties) {
+	public SweetBerryPipsBlock(Block.Properties properties) {
 		super(properties);
 	}
 

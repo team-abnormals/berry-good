@@ -1,7 +1,6 @@
 {
     "pack": {
-        "description": "Berry Good Resources",
-        "pack_format": 4,
-        "_comment": ""
+        "description": "Berry Good",
+        "pack_format": 5,
     }
 }

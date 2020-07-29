@@ -4,8 +4,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.minecraftabnormals.berry_good.core.registry.BGRegistry;
-import com.minecraftabnormals.abnormals_core.core.utils.DataUtils;
-import com.minecraftabnormals.abnormals_core.core.utils.RegistryHelper;
+import com.teamabnormals.abnormals_core.core.utils.DataUtils;
+import com.teamabnormals.abnormals_core.core.utils.RegistryHelper;
 
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
@@ -26,8 +26,8 @@ public class BerryGood {
 	public static final String MODID = "berry_good";
 	public static final Logger LOGGER = LogManager.getLogger(MODID);
 
-	public static final RegistryHelper REGISTRY_HELPER = new RegistryHelper(MODID);
-	public static final RegistryHelper REGISTRY_REPLACER = new RegistryHelper("minecraft");
+	public static final RegistryHelper REGISTRY_HELPER 		= new RegistryHelper(MODID);
+	public static final RegistryHelper REGISTRY_REPLACER 	= new RegistryHelper("minecraft");
 
 	public BerryGood() {
 		IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
@@ -46,8 +46,8 @@ public class BerryGood {
 
 	private void commonSetup(FMLCommonSetupEvent event) {
 		DeferredWorkQueue.runLater(() -> {
-			DataUtils.registerCompostable(0.3F, BGRegistry.SWEET_BERRY_PIPS.get());
-			DataUtils.registerCompostable(0.3F, BGRegistry.SWEET_BERRIES.get());
+			DataUtils.registerCompostable(BGRegistry.SWEET_BERRY_PIPS.get(), 0.30F);
+			DataUtils.registerCompostable(BGRegistry.SWEET_BERRIES.get(), 0.30F);
 		});
 	}
 

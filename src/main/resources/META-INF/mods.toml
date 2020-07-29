@@ -1,29 +1,27 @@
 modLoader="javafml"
 loaderVersion="[28,)"
-logoFile="logo.png" #optional
 issueTrackerURL="https://github.com/minecraftabnormals/Berry-Good/issues"
 license="https://github.com/minecraftabnormals/Berry-Good/blob/master/LICENSE.txt"
 
 [[mods]]
     modId="berry_good"
-    namespace="berry_good"
     version="${file.jarVersion}"
-    displayName="Berry Good"
+    logoFile="logo.png"
     authors="SmellyModder Cameron, Five, Bagel"
+    displayName="Berry Good"
     description='''Makes sweet berries less annoying to eat and adds more berry related content'''
-    displayURL=""
 
 	[[dependencies.berry_good]]
 	    modId="forge"
 	    mandatory=true
-	    versionRange="[32.0.88,)"
+	    versionRange="[32.0.72,)"
 	    ordering="NONE"
 	    side="BOTH"
 	
 	[[dependencies.berry_good]]
 	    modId="abnormals_core"
 	    mandatory=true
-	    versionRange="[2.1.0,)"
+	    versionRange="[2.0.1,)"
 	    ordering="AFTER"
 	    side="BOTH"
 	

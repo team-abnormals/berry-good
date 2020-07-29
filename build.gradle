@@ -62,39 +62,21 @@ minecraft {
     }
 }
 
-dependencies {
-    minecraft 'net.minecraftforge:forge:1.16.1-32.0.88'
-    implementation fg.deobf("curse.maven:abnormals-core:3016902")
-}
-
 jar {
     manifest {
         attributes([
         	"Specification-Title": "Berry Good",
-            	"Specification-Vendor": "Team Abnormals",
-            	"Specification-Version": "1",
-            	"Implementation-Title": project.name,
-            	"Implementation-Version": "${version}",
-            	"Implementation-Vendor": "Team Abnormals",
-            	"Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
+            "Specification-Vendor": "Team Abnormals",
+            "Specification-Version": "1",
+            "Implementation-Title": project.name,
+            "Implementation-Version": "${version}",
+            "Implementation-Vendor": "Team Abnormals",
+            "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
         ])
     }
 }
 
-def reobfFile = file("$buildDir/reobfJar/output.jar")
-def reobfArtifact = artifacts.add('default', reobfFile) {
-    type 'jar'
-    builtBy 'reobfJar'
-}
-publishing {
-    publications {
-        mavenJava(MavenPublication) {
-            artifact reobfArtifact
-        }
-    }
-    repositories {
-        maven {
-            url "file:///${project.projectDir}/mcmodsrepo"
-        }
-    }
+dependencies {
+    minecraft 'net.minecraftforge:forge:1.16.1-32.0.88'
+    implementation fg.deobf("curse.maven:abnormals-core:3017821")
 }
