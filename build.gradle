@@ -16,7 +16,7 @@ apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
 version = '3.0.1'
-group = 'com.minecraftabnormals.berry_good'
+group = 'com.minecraftabnormals'
 archivesBaseName = 'Berry-Good-1.16.1'
 
 sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8'
