@@ -27,14 +27,12 @@ public class BerryGood {
 	public static final Logger LOGGER = LogManager.getLogger(MODID);
 
 	public static final RegistryHelper REGISTRY_HELPER 		= new RegistryHelper(MODID);
-	public static final RegistryHelper REGISTRY_REPLACER 	= new RegistryHelper("minecraft");
 
 	public BerryGood() {
 		IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
 		REGISTRY_HELPER.getDeferredBlockRegister().register(modEventBus);
 		REGISTRY_HELPER.getDeferredItemRegister().register(modEventBus);
-		REGISTRY_REPLACER.getDeferredItemRegister().register(modEventBus);
 
 		MinecraftForge.EVENT_BUS.register(this);
 
@@ -47,7 +45,6 @@ public class BerryGood {
 	private void commonSetup(FMLCommonSetupEvent event) {
 		DeferredWorkQueue.runLater(() -> {
 			DataUtils.registerCompostable(BGRegistry.SWEET_BERRY_PIPS.get(), 0.30F);
-			DataUtils.registerCompostable(BGRegistry.SWEET_BERRIES.get(), 0.30F);
 		});
 	}
 

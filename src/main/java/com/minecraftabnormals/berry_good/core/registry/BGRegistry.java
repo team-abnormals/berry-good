@@ -18,11 +18,9 @@ import net.minecraftforge.fml.common.Mod;
 public class BGRegistry {
 
 	public static final RegistryHelper HELPER 	= BerryGood.REGISTRY_HELPER;
-	public static final RegistryHelper REPLACER = BerryGood.REGISTRY_REPLACER;
 
 	public static final RegistryObject<Block> SWEET_BERRY_BUSH_PIPS = HELPER.createBlockNoItem("sweet_berry_bush_pips", () -> new SweetBerryPipsBlock(Block.Properties.from(Blocks.SWEET_BERRY_BUSH)));
 
-	public static final RegistryObject<Item> SWEET_BERRIES 			= REPLACER.createItem("sweet_berries", () -> new Item((new Item.Properties()).group(ItemGroup.FOOD).food(Foods.SWEET_BERRIES)));
 	public static final RegistryObject<Item> SWEET_BERRY_MINCE 		= HELPER.createItem("sweet_berry_mince", () -> new Item(new Item.Properties().group(ItemGroup.FOOD).food(getMeatValue(false))));
 	public static final RegistryObject<Item> SWEET_BERRY_MEATBALLS 	= HELPER.createItem("sweet_berry_meatballs", () -> new Item(new Item.Properties().group(ItemGroup.FOOD).food(getMeatValue(true))));
 	public static final RegistryObject<Item> SWEET_BERRY_PIPS 		= HELPER.createItem("sweet_berry_pips", () -> new BlockNamedItem(SWEET_BERRY_BUSH_PIPS.get(), new Item.Properties().group(ItemGroup.MISC)));
