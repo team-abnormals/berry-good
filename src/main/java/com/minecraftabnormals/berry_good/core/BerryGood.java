@@ -1,12 +1,8 @@
 package com.minecraftabnormals.berry_good.core;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
 import com.minecraftabnormals.berry_good.core.registry.BGRegistry;
 import com.teamabnormals.abnormals_core.core.utils.DataUtils;
 import com.teamabnormals.abnormals_core.core.utils.RegistryHelper;
-
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraftforge.api.distmarker.Dist;
@@ -22,23 +18,20 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 @Mod(BerryGood.MODID)
 @SuppressWarnings("deprecation")
 public class BerryGood {
-
 	public static final String MODID = "berry_good";
-	public static final Logger LOGGER = LogManager.getLogger(MODID);
-
-	public static final RegistryHelper REGISTRY_HELPER 		= new RegistryHelper(MODID);
+	public static final RegistryHelper REGISTRY_HELPER = new RegistryHelper(MODID);
 
 	public BerryGood() {
-		IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
-		REGISTRY_HELPER.getDeferredBlockRegister().register(modEventBus);
-		REGISTRY_HELPER.getDeferredItemRegister().register(modEventBus);
+		REGISTRY_HELPER.getDeferredBlockRegister().register(bus);
+		REGISTRY_HELPER.getDeferredItemRegister().register(bus);
 
 		MinecraftForge.EVENT_BUS.register(this);
 
-		modEventBus.addListener(this::commonSetup);
-		DistExecutor.runWhenOn(Dist.CLIENT, () -> () -> {
-			modEventBus.addListener(this::clientSetup);
+		bus.addListener(this::commonSetup);
+		DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> {
+			bus.addListener(this::clientSetup);
 		});
 	}
 

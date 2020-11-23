@@ -1,14 +1,7 @@
 package com.minecraftabnormals.berry_good.common.block;
 
-import java.util.Random;
-
 import com.minecraftabnormals.berry_good.core.registry.BGRegistry;
-
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.BushBlock;
-import net.minecraft.block.IGrowable;
+import net.minecraft.block.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -20,6 +13,8 @@ import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
+
+import java.util.Random;
 
 public class SweetBerryPipsBlock extends BushBlock implements IGrowable {
 
@@ -69,5 +64,4 @@ public class SweetBerryPipsBlock extends BushBlock implements IGrowable {
 	public void grow(ServerWorld worldIn, Random rand, BlockPos pos, BlockState state) {
 		worldIn.setBlockState(pos, Blocks.SWEET_BERRY_BUSH.getDefaultState(), 2);
 	}
-
 }
