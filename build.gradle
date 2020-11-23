@@ -8,9 +8,11 @@ buildscript {
         classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '3.+', changing: true
     }
 }
+
 plugins {
-  id "com.wynprice.cursemaven" version "2.1.1"
+    id "com.wynprice.cursemaven" version "2.1.1"
 }
+
 apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
@@ -27,9 +29,10 @@ minecraft {
 
     runs {
         client {
-            workingDirectory project.file('run')
+            workingDirectory project.file('run/client')
             property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
             property 'forge.logging.console.level', 'debug'
+            property 'mixin.env.disableRefMap', 'true'
             mods {
                 berry_good {
                     source sourceSets.main
@@ -38,9 +41,10 @@ minecraft {
         }
 
         server {
-            workingDirectory project.file('run')
+            workingDirectory project.file('run/server')
             property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
             property 'forge.logging.console.level', 'debug'
+            property 'mixin.env.disableRefMap', 'true'
             mods {
                 berry_good {
                     source sourceSets.main
@@ -49,7 +53,7 @@ minecraft {
         }
 
         data {
-            workingDirectory project.file('run')
+            workingDirectory project.file('run/data')
             property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
             property 'forge.logging.console.level', 'debug'
             args '--mod', 'examplemod', '--all', '--output', file('src/generated/resources/')
@@ -62,21 +66,21 @@ minecraft {
     }
 }
 
-jar {
-    manifest {
-        attributes([
-        	"Specification-Title": "Berry Good",
-            "Specification-Vendor": "Team Abnormals",
-            "Specification-Version": "1",
-            "Implementation-Title": project.name,
-            "Implementation-Version": "${version}",
-            "Implementation-Vendor": "Team Abnormals",
-            "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
-        ])
-    }
-}
-
 dependencies {
     minecraft 'net.minecraftforge:forge:1.16.1-32.0.88'
     implementation fg.deobf("curse.maven:abnormals-core:3017821")
+}
+
+jar {
+    manifest {
+        attributes([
+                "Specification-Title"     : "Berry Good",
+                "Specification-Vendor"    : "Team Abnormals",
+                "Specification-Version"   : "1",
+                "Implementation-Title"    : project.name,
+                "Implementation-Version"  : "${version}",
+                "Implementation-Vendor"   : "Team Abnormals",
+                "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
+        ])
+    }
 }
