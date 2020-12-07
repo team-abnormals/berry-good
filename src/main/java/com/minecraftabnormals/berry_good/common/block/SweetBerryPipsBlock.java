@@ -1,6 +1,6 @@
 package com.minecraftabnormals.berry_good.common.block;
 
-import com.minecraftabnormals.berry_good.core.registry.BGRegistry;
+import com.minecraftabnormals.berry_good.core.registry.BGItems;
 import net.minecraft.block.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
@@ -30,7 +30,7 @@ public class SweetBerryPipsBlock extends BushBlock implements IGrowable {
 
 	@Override
 	public ItemStack getItem(IBlockReader worldIn, BlockPos pos, BlockState state) {
-		return new ItemStack(BGRegistry.SWEET_BERRY_PIPS.get());
+		return new ItemStack(BGItems.SWEET_BERRY_PIPS.get());
 	}
 
 	@SuppressWarnings("deprecation")

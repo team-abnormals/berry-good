@@ -7,7 +7,7 @@ import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
-@Mod.EventBusSubscriber(modid = BerryGood.MODID)
+@Mod.EventBusSubscriber(modid = BerryGood.MOD_ID)
 public class BGEvents {
 
 	@SubscribeEvent
