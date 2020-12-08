@@ -49,7 +49,7 @@ minecraft {
             workingDirectory project.file("run")
             property "forge.logging.markers", "SCAN,REGISTRIES,REGISTRYDUMP"
             property "forge.logging.console.level", "debug"
-            args "--mod", "examplemod", "--all", "--output", file("src/generated/resources/")
+            args "--mod", "berry_good", "--all", "--output", file("src/generated/resources/")
             mods {
                 berry_good {
                     source sourceSets.main
@@ -62,7 +62,7 @@ minecraft {
 dependencies {
     minecraft "net.minecraftforge:forge:${project.minecraft}-${project.forge}"
     implementation fg.deobf("curse.maven:abnormals-core-382216:${project.abnormalsCore}")
-    implementation fg.deobf("curse.maven:jei-238222:3132197")
+    implementation fg.deobf("curse.maven:jei-238222:3109181")
 }
 
 repositories {
