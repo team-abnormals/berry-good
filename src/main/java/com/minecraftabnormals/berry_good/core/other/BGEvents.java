@@ -1,5 +1,6 @@
 package com.minecraftabnormals.berry_good.core.other;
 
+import com.minecraftabnormals.berry_good.core.BGConfig;
 import com.minecraftabnormals.berry_good.core.BerryGood;
 import net.minecraft.item.Items;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent.RightClickBlock;
@@ -12,7 +13,7 @@ public class BGEvents {
 
 	@SubscribeEvent
 	public static void rightClickBlock(RightClickBlock event) {
-		if (event.getItemStack().getItem() == Items.SWEET_BERRIES) {
+		if (BGConfig.COMMON.berriesRequirePips.get() && event.getItemStack().getItem() == Items.SWEET_BERRIES) {
 			event.setUseItem(Event.Result.DENY);
 		}
 	}

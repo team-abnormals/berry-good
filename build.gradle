@@ -1,17 +1,24 @@
 buildscript {
     repositories {
         maven { url = "https://files.minecraftforge.net/maven" }
+        maven { url = "https://repo.spongepowered.org/repository/maven-public/" }
         jcenter()
         mavenCentral()
     }
     dependencies {
         classpath group: "net.minecraftforge.gradle", name: "ForgeGradle", version: "3.+", changing: true
+        classpath group: "org.spongepowered", name: "mixingradle", version: "0.7-SNAPSHOT"
     }
 }
 
 apply plugin: "net.minecraftforge.gradle"
 apply plugin: "eclipse"
 apply plugin: "maven-publish"
+apply plugin: "org.spongepowered.mixin"
+
+mixin {
+    add sourceSets.main, project.modId + ".refmap.json"
+}
 
 version = "${project.minecraft}-${project.modVersion}"
 group = "com.minecraftabnormals"
@@ -28,6 +35,7 @@ minecraft {
             property "forge.logging.markers", "SCAN,REGISTRIES,REGISTRYDUMP"
             property "forge.logging.console.level", "debug"
             property "mixin.env.disableRefMap", "true"
+            arg "-mixin.config=berry_good.mixins.json"
             mods {
                 berry_good {
                     source sourceSets.main
@@ -39,6 +47,7 @@ minecraft {
             property "forge.logging.markers", "SCAN,REGISTRIES,REGISTRYDUMP"
             property "forge.logging.console.level", "debug"
             property "mixin.env.disableRefMap", "true"
+            arg "-mixin.config=berry_good.mixins.json"
             mods {
                 berry_good {
                     source sourceSets.main
@@ -81,6 +90,7 @@ jar {
                 "Implementation-Version"  : project.modVersion,
                 "Implementation-Vendor"   : "Team Abnormals",
                 "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
+                "MixinConfigs"            : project.modId + ".mixins.json"
         ])
     }
 }

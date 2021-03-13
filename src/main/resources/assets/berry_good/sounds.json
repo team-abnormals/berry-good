@@ -1,0 +1,11 @@
+{
+  "music.record.fox": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "berry_good:record/fox",
+        "stream": true
+      }
+    ]
+  }
+}
