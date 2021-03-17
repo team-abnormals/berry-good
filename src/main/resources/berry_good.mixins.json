@@ -3,7 +3,7 @@
   "package": "com.minecraftabnormals.berry_good.core.mixin",
   "compatibilityLevel": "JAVA_8",
   "minVersion": "0.8",
-  "refmap": "environmental.refmap.json",
+  "refmap": "berry_good.refmap.json",
   "mixins": [
     "FoxEntityMixin"
   ],
