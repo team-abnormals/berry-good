@@ -12,7 +12,7 @@ public class BGConfig {
 		public final ConfigValue<Boolean> berriesRequirePips;
 
 		public final ConfigValue<Boolean> foxMusicDisc;
-		public final ConfigValue<Float> foxMusicDiscChance;
+		public final ConfigValue<Double> foxMusicDiscChance;
 
 		Common(ForgeConfigSpec.Builder builder) {
 			builder.push("tweaks");
@@ -24,7 +24,7 @@ public class BGConfig {
 			builder.push("items");
 			builder.push("music_disc_fox");
 			foxMusicDisc = builder.comment("If Foxes can spawn with a Fox music disc").define("Enable Fox music disc", true);
-			foxMusicDiscChance = builder.comment("The chance that a Fox has to spawn with a Fox music disc").define("Fox music disc chance", 0.01F);
+			foxMusicDiscChance = builder.comment("The chance that a Fox has to spawn with a Fox music disc").define("Fox music disc chance", 0.01D);
 			builder.pop();
 			builder.pop();
 		}
