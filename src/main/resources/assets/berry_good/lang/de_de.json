@@ -3,5 +3,8 @@
 
   "item.berry_good.sweet_berry_pips": "Süßbeerkerne",
   "item.berry_good.sweet_berry_mince": "Süßbeerhackfleisch",
-  "item.berry_good.sweet_berry_meatballs": "Süßbeerfleischkloß"
+  "item.berry_good.sweet_berry_meatballs": "Süßbeerfleischkloß",
+  
+  "item.berry_good.music_disc_fox": "Schallplatte",
+  "item.berry_good.music_disc_fox.desc": "Mista Jub - Fox"
 }
