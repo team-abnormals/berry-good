@@ -2,11 +2,10 @@ buildscript {
     repositories {
         maven { url = "https://files.minecraftforge.net/maven" }
         maven { url = "https://repo.spongepowered.org/repository/maven-public/" }
-        jcenter()
         mavenCentral()
     }
     dependencies {
-        classpath group: "net.minecraftforge.gradle", name: "ForgeGradle", version: "3.+", changing: true
+        classpath group: "net.minecraftforge.gradle", name: "ForgeGradle", version: "4.1.+", changing: true
         classpath group: "org.spongepowered", name: "mixingradle", version: "0.7-SNAPSHOT"
     }
 }
@@ -58,7 +57,8 @@ minecraft {
             workingDirectory project.file("run")
             property "forge.logging.markers", "SCAN,REGISTRIES,REGISTRYDUMP"
             property "forge.logging.console.level", "debug"
-            args "--mod", "berry_good", "--all", "--output", file("src/generated/resources/")
+            property "mixin.env.disableRefMap", "true"
+            args "--mod", "berry_good", "--all", "--output", file("src/generated/resources/"), '--existing', sourceSets.main.resources.srcDirs[0]
             mods {
                 berry_good {
                     source sourceSets.main
@@ -66,6 +66,10 @@ minecraft {
             }
         }
     }
+}
+
+sourceSets.main.resources {
+    srcDir 'src/generated/resources'
 }
 
 dependencies {

@@ -17,7 +17,7 @@ public class BGItems {
 
 	public static final RegistryObject<Item> MUSIC_DISC_FOX = HELPER.createItem("music_disc_fox", () -> new AbnormalsMusicDiscItem(2, BGSounds.FOX, new Item.Properties().maxStackSize(1).group(ItemGroup.MISC).rarity(Rarity.RARE)));
 
-	static class Foods {
+	public static class Foods {
 		public static final Food SWEET_BERRY_MINCE = new Food.Builder().hunger(5).saturation(0.2F).build();
 		public static final Food SWEET_BERRY_MEATBALLS = new Food.Builder().hunger(10).saturation(0.7F).build();
 	}

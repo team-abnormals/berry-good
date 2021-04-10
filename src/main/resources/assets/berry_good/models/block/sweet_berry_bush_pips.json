@@ -1,6 +1,0 @@
-{
-    "parent": "block/cross",
-    "textures": {
-        "cross": "berry_good:block/sweet_berry_bush_pips"
-    }
-}

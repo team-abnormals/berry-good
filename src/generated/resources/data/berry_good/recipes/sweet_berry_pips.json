@@ -3,13 +3,9 @@
   "ingredients": [
     {
       "item": "minecraft:sweet_berries"
-    },
-    {
-      "item": "minecraft:porkchop"
     }
   ],
   "result": {
-    "item": "berry_good:sweet_berry_mince",
-    "count": 1
+    "item": "berry_good:sweet_berry_pips"
   }
 }
