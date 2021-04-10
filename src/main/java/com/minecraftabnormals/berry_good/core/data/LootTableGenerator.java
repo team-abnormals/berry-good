@@ -43,7 +43,7 @@ public class LootTableGenerator extends ForgeLootTableProvider {
 
 		@Override
 		protected Iterable<Block> getKnownBlocks() {
-			return ForgeRegistries.BLOCKS.getValues().stream().filter(entityType -> entityType.getRegistryName() != null && BerryGood.MOD_ID.equals(entityType.getRegistryName().getNamespace())).collect(Collectors.toSet());
+			return ForgeRegistries.BLOCKS.getValues().stream().filter(block -> block.getRegistryName() != null && BerryGood.MOD_ID.equals(block.getRegistryName().getNamespace())).collect(Collectors.toSet());
 		}
 	}
 }
