@@ -12,6 +12,7 @@ import java.util.function.Consumer;
 
 
 public class RecipeGenerator extends RecipeProvider {
+
 	public RecipeGenerator(DataGenerator generator) {
 		super(generator);
 	}

@@ -7,6 +7,7 @@ license = "https://github.com/team-abnormals/berry-good/blob/main/LICENSE.txt"
     modId = "berry_good"
     version = "${file.jarVersion}"
     logoFile = "logo.png"
+    itemIcon = "berry_good:sweet_berry_pips"
     authors = "Team Abnormals"
     credits = "SmellyModder, Cameron, five, bageldotjpg"
     displayName = "Berry Good"
@@ -17,20 +18,20 @@ license = "https://github.com/team-abnormals/berry-good/blob/main/LICENSE.txt"
 [[dependencies.berry_good]]
     modId = "minecraft"
     mandatory = true
-    versionRange = "[1.16.3,1.17)"
+    versionRange = "[1.16.5,1.17)"
     ordering = "NONE"
     side = "BOTH"
 
 [[dependencies.berry_good]]
     modId = "forge"
     mandatory = true
-    versionRange = "[34.1.42,)"
+    versionRange = "[36.1.0,)"
     ordering = "NONE"
     side = "BOTH"
 
 [[dependencies.berry_good]]
     modId = "abnormals_core"
     mandatory = true
-    versionRange = "[3.0.4,)"
+    versionRange = "[3.1.1,)"
     ordering = "AFTER"
     side = "BOTH"

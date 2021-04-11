@@ -11,6 +11,7 @@ import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
 public class ItemTagGenerator extends ItemTagsProvider {
+
 	public ItemTagGenerator(DataGenerator generator, BlockTagsProvider blockTagsProvider, ExistingFileHelper existingFileHelper) {
 		super(generator, blockTagsProvider, BerryGood.MOD_ID, existingFileHelper);
 	}

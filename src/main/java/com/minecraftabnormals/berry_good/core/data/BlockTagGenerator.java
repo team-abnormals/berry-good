@@ -8,6 +8,7 @@ import net.minecraft.tags.BlockTags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
 public class BlockTagGenerator extends BlockTagsProvider {
+
 	public BlockTagGenerator(DataGenerator generator, ExistingFileHelper existingFileHelper) {
 		super(generator, BerryGood.MOD_ID, existingFileHelper);
 	}

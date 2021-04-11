@@ -16,7 +16,7 @@ apply plugin: "maven-publish"
 apply plugin: "org.spongepowered.mixin"
 
 mixin {
-    add sourceSets.main, project.modId + ".refmap.json"
+    add sourceSets.main, "${project.modId}.refmap.json"
 }
 
 version = "${project.minecraft}-${project.modVersion}"
@@ -34,7 +34,7 @@ minecraft {
             property "forge.logging.markers", "SCAN,REGISTRIES,REGISTRYDUMP"
             property "forge.logging.console.level", "debug"
             property "mixin.env.disableRefMap", "true"
-            arg "-mixin.config=berry_good.mixins.json"
+            arg "-mixin.config=" + project.modId + ".mixins.json"
             mods {
                 berry_good {
                     source sourceSets.main
@@ -46,7 +46,7 @@ minecraft {
             property "forge.logging.markers", "SCAN,REGISTRIES,REGISTRYDUMP"
             property "forge.logging.console.level", "debug"
             property "mixin.env.disableRefMap", "true"
-            arg "-mixin.config=berry_good.mixins.json"
+            arg "-mixin.config=" + project.modId + ".mixins.json"
             mods {
                 berry_good {
                     source sourceSets.main
@@ -58,7 +58,7 @@ minecraft {
             property "forge.logging.markers", "SCAN,REGISTRIES,REGISTRYDUMP"
             property "forge.logging.console.level", "debug"
             property "mixin.env.disableRefMap", "true"
-            args "--mod", "berry_good", "--all", "--output", file("src/generated/resources/"), '--existing', sourceSets.main.resources.srcDirs[0]
+            args "--mod", project.modId, "--all", "--output", file("src/generated/resources/"), "--existing", file("src/main/resources")
             mods {
                 berry_good {
                     source sourceSets.main
