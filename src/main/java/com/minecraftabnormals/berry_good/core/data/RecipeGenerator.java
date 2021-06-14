@@ -18,15 +18,15 @@ public class RecipeGenerator extends RecipeProvider {
 	}
 
 	@Override
-	protected void registerRecipes(Consumer<IFinishedRecipe> consumer) {
-		ShapelessRecipeBuilder.shapelessRecipe(BGItems.SWEET_BERRY_PIPS.get()).addIngredient(Items.SWEET_BERRIES).addCriterion("has_sweet_berries", hasItem(Items.SWEET_BERRIES)).build(consumer);
-		ShapelessRecipeBuilder.shapelessRecipe(BGItems.SWEET_BERRY_MINCE.get()).addIngredient(Items.SWEET_BERRIES).addIngredient(Items.PORKCHOP).addCriterion("has_sweet_berries", hasItem(Items.SWEET_BERRIES)).build(consumer);
-		CookingRecipeBuilder.smeltingRecipe(Ingredient.fromItems(BGItems.SWEET_BERRY_MINCE.get()), BGItems.SWEET_BERRY_MEATBALLS.get(), 0.35F, 200).addCriterion("has_sweet_berry_mince", hasItem(BGItems.SWEET_BERRY_MINCE.get())).build(consumer);
-		cookingRecipesForMethod(consumer, "smoking", IRecipeSerializer.SMOKING, 100);
-		cookingRecipesForMethod(consumer, "campfire_cooking", IRecipeSerializer.CAMPFIRE_COOKING, 600);
+	protected void buildShapelessRecipes(Consumer<IFinishedRecipe> consumer) {
+		ShapelessRecipeBuilder.shapeless(BGItems.SWEET_BERRY_PIPS.get()).requires(Items.SWEET_BERRIES).unlockedBy("has_sweet_berries", has(Items.SWEET_BERRIES)).save(consumer);
+		ShapelessRecipeBuilder.shapeless(BGItems.SWEET_BERRY_MINCE.get()).requires(Items.SWEET_BERRIES).requires(Items.PORKCHOP).unlockedBy("has_sweet_berries", has(Items.SWEET_BERRIES)).save(consumer);
+		CookingRecipeBuilder.smelting(Ingredient.of(BGItems.SWEET_BERRY_MINCE.get()), BGItems.SWEET_BERRY_MEATBALLS.get(), 0.35F, 200).unlockedBy("has_sweet_berry_mince", has(BGItems.SWEET_BERRY_MINCE.get())).save(consumer);
+		cookingRecipesForMethod(consumer, "smoking", IRecipeSerializer.SMOKING_RECIPE, 100);
+		cookingRecipesForMethod(consumer, "campfire_cooking", IRecipeSerializer.CAMPFIRE_COOKING_RECIPE, 600);
 	}
 
 	private static void cookingRecipesForMethod(Consumer<IFinishedRecipe> recipeConsumer, String recipeConsumerIn, CookingRecipeSerializer<?> cookingMethod, int serializerIn) {
-		CookingRecipeBuilder.cookingRecipe(Ingredient.fromItems(BGItems.SWEET_BERRY_MINCE.get()), BGItems.SWEET_BERRY_MEATBALLS.get(), 0.35F, serializerIn, cookingMethod).addCriterion("has_sweet_berry_mince", hasItem(BGItems.SWEET_BERRY_MINCE.get())).build(recipeConsumer, BerryGood.MOD_ID + ":sweet_berry_meatballs_from_" + recipeConsumerIn);
+		CookingRecipeBuilder.cooking(Ingredient.of(BGItems.SWEET_BERRY_MINCE.get()), BGItems.SWEET_BERRY_MEATBALLS.get(), 0.35F, serializerIn, cookingMethod).unlockedBy("has_sweet_berry_mince", has(BGItems.SWEET_BERRY_MINCE.get())).save(recipeConsumer, BerryGood.MOD_ID + ":sweet_berry_meatballs_from_" + recipeConsumerIn);
 	}
 }

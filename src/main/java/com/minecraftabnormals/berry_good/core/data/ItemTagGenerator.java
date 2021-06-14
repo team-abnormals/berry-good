@@ -17,9 +17,9 @@ public class ItemTagGenerator extends ItemTagsProvider {
 	}
 
 	@Override
-	protected void registerTags() {
-		this.getOrCreateBuilder(ItemTags.MUSIC_DISCS).addItemEntry(BGItems.MUSIC_DISC_FOX.get());
-		this.getOrCreateBuilder(BGItemTags.SEEDS_SWEET_BERRY).addItemEntry(BGItems.SWEET_BERRY_PIPS.get());
-		this.getOrCreateBuilder(Tags.Items.SEEDS).addTag(BGItemTags.SEEDS_SWEET_BERRY);
+	protected void addTags() {
+		this.tag(ItemTags.MUSIC_DISCS).add(BGItems.MUSIC_DISC_FOX.get());
+		this.tag(BGItemTags.SEEDS_SWEET_BERRY).add(BGItems.SWEET_BERRY_PIPS.get());
+		this.tag(Tags.Items.SEEDS).addTag(BGItemTags.SEEDS_SWEET_BERRY);
 	}
 }

@@ -38,7 +38,7 @@ public class LootTableGenerator extends ForgeLootTableProvider {
 	private static class BlockProvider extends BlockLootTables {
 		@Override
 		protected void addTables() {
-			this.registerDropping(BGBlocks.SWEET_BERRY_BUSH_PIPS.get(), BGItems.SWEET_BERRY_PIPS.get());
+			this.dropOther(BGBlocks.SWEET_BERRY_BUSH_PIPS.get(), BGItems.SWEET_BERRY_PIPS.get());
 		}
 
 		@Override

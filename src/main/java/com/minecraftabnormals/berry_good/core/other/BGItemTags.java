@@ -8,6 +8,6 @@ public class BGItemTags {
 	public static final ITag.INamedTag<Item> SEEDS_SWEET_BERRY = createForgeTag("seeds/sweet_berry");
 
 	private static ITag.INamedTag<Item> createForgeTag(String name) {
-		return ItemTags.makeWrapperTag("forge:" + name);
+		return ItemTags.bind("forge:" + name);
 	}
 }

@@ -14,7 +14,7 @@ public class BlockTagGenerator extends BlockTagsProvider {
 	}
 
 	@Override
-	protected void registerTags() {
-		this.getOrCreateBuilder(BlockTags.BEE_GROWABLES).addItemEntry(BGBlocks.SWEET_BERRY_BUSH_PIPS.get());
+	protected void addTags() {
+		this.tag(BlockTags.BEE_GROWABLES).add(BGBlocks.SWEET_BERRY_BUSH_PIPS.get());
 	}
 }

@@ -18,7 +18,7 @@ import net.minecraftforge.common.ForgeHooks;
 import java.util.Random;
 
 public class SweetBerryPipsBlock extends BushBlock implements IGrowable {
-	private static final VoxelShape SHAPE = Block.makeCuboidShape(3.0D, 0.0D, 3.0D, 13.0D, 8.0D, 13.0D);
+	private static final VoxelShape SHAPE = Block.box(3.0D, 0.0D, 3.0D, 13.0D, 8.0D, 13.0D);
 
 	public SweetBerryPipsBlock(Block.Properties properties) {
 		super(properties);
@@ -30,39 +30,39 @@ public class SweetBerryPipsBlock extends BushBlock implements IGrowable {
 	}
 
 	@Override
-	public ItemStack getItem(IBlockReader worldIn, BlockPos pos, BlockState state) {
+	public ItemStack getCloneItemStack(IBlockReader worldIn, BlockPos pos, BlockState state) {
 		return new ItemStack(BGItems.SWEET_BERRY_PIPS.get());
 	}
 
 	@Override
 	public void tick(BlockState state, ServerWorld worldIn, BlockPos pos, Random random) {
 		super.tick(state, worldIn, pos, random);
-		if (worldIn.getLightSubtracted(pos.up(), 0) >= 9 && ForgeHooks.onCropsGrowPre(worldIn, pos, state, random.nextInt(5) == 0)) {
-			worldIn.setBlockState(pos, Blocks.SWEET_BERRY_BUSH.getDefaultState(), 2);
+		if (worldIn.getRawBrightness(pos.above(), 0) >= 9 && ForgeHooks.onCropsGrowPre(worldIn, pos, state, random.nextInt(5) == 0)) {
+			worldIn.setBlock(pos, Blocks.SWEET_BERRY_BUSH.defaultBlockState(), 2);
 			net.minecraftforge.common.ForgeHooks.onCropsGrowPost(worldIn, pos, state);
 		}
 
 	}
 
 	@Override
-	public void onEntityCollision(BlockState state, World worldIn, BlockPos pos, Entity entityIn) {
+	public void entityInside(BlockState state, World worldIn, BlockPos pos, Entity entityIn) {
 		if (entityIn instanceof LivingEntity && entityIn.getType() != EntityType.FOX) {
-			entityIn.setMotionMultiplier(state, new Vector3d(0.8F, 0.75D, 0.8F));
+			entityIn.makeStuckInBlock(state, new Vector3d(0.8F, 0.75D, 0.8F));
 		}
 	}
 
 	@Override
-	public boolean canGrow(IBlockReader worldIn, BlockPos pos, BlockState state, boolean isClient) {
+	public boolean isValidBonemealTarget(IBlockReader worldIn, BlockPos pos, BlockState state, boolean isClient) {
 		return true;
 	}
 
 	@Override
-	public boolean canUseBonemeal(World worldIn, Random rand, BlockPos pos, BlockState state) {
+	public boolean isBonemealSuccess(World worldIn, Random rand, BlockPos pos, BlockState state) {
 		return true;
 	}
 
 	@Override
-	public void grow(ServerWorld worldIn, Random rand, BlockPos pos, BlockState state) {
-		worldIn.setBlockState(pos, Blocks.SWEET_BERRY_BUSH.getDefaultState(), 2);
+	public void performBonemeal(ServerWorld worldIn, Random rand, BlockPos pos, BlockState state) {
+		worldIn.setBlock(pos, Blocks.SWEET_BERRY_BUSH.defaultBlockState(), 2);
 	}
 }

@@ -12,5 +12,5 @@ import net.minecraftforge.fml.common.Mod;
 public class BGBlocks {
 	public static final BlockSubRegistryHelper HELPER = BerryGood.REGISTRY_HELPER.getBlockSubHelper();
 
-	public static final RegistryObject<Block> SWEET_BERRY_BUSH_PIPS = HELPER.createBlockNoItem("sweet_berry_bush_pips", () -> new SweetBerryPipsBlock(Block.Properties.from(Blocks.SWEET_BERRY_BUSH)));
+	public static final RegistryObject<Block> SWEET_BERRY_BUSH_PIPS = HELPER.createBlockNoItem("sweet_berry_bush_pips", () -> new SweetBerryPipsBlock(Block.Properties.copy(Blocks.SWEET_BERRY_BUSH)));
 }
