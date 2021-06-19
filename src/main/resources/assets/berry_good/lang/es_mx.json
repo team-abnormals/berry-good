@@ -1,11 +1,11 @@
-{
-  "_comment": "Blocks",
-  
-  "block.berry_good.sweet_berry_bush_pips": "Pepitas de bayas dulces",
 
-  "_comment": "Items",
+{
+  "block.berry_good.sweet_berry_bush_pips": "Pepitas de bayas dulces",
 
   "item.berry_good.sweet_berry_pips": "Pepitas de bayas dulces",
   "item.berry_good.sweet_berry_mince": "Bayas dulces molidas",
-  "item.berry_good.sweet_berry_meatballs": "Albóndigas de bayas dulces"
+  "item.berry_good.sweet_berry_meatballs": "Albóndigas de bayas dulces",
+
+  "item.berry_good.music_disc_fox": "Disco",
+  "item.berry_good.music_disc_fox.desc": "Mista Jub - Fox"
 }
