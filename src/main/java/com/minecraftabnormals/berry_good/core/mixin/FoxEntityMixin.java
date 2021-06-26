@@ -21,8 +21,8 @@ public abstract class FoxEntityMixin extends LivingEntity {
 		super(type, worldIn);
 	}
 
-	@Inject(method = "setEquipmentBasedOnDifficulty", at = @At("TAIL"))
-	private void setEquipmentBasedOnDifficulty(DifficultyInstance difficulty, CallbackInfo info) {
+	@Inject(method = "populateDefaultEquipmentSlots", at = @At("TAIL"))
+	private void populateDefaultEquipmentSlots(DifficultyInstance difficulty, CallbackInfo info) {
 		if (BGConfig.COMMON.foxMusicDisc.get() && this.random.nextFloat() < BGConfig.COMMON.foxMusicDiscChance.get()) {
 			this.setItemSlot(EquipmentSlotType.MAINHAND, new ItemStack(BGItems.MUSIC_DISC_FOX.get()));
 		}
