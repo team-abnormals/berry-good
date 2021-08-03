@@ -35,6 +35,7 @@ public class BerryGood {
 		bus.addListener(this::dataSetup);
 
 		ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, BGConfig.COMMON_SPEC);
+		DataUtil.registerConfigCondition(BerryGood.MOD_ID, BGConfig.COMMON);
 	}
 
 	private void commonSetup(FMLCommonSetupEvent event) {

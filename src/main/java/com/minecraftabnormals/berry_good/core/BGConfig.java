@@ -1,5 +1,6 @@
 package com.minecraftabnormals.berry_good.core;
 
+import com.minecraftabnormals.abnormals_core.core.annotations.ConfigKey;
 import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.common.ForgeConfigSpec.ConfigValue;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
@@ -9,9 +10,15 @@ import org.apache.commons.lang3.tuple.Pair;
 public class BGConfig {
 
 	public static class Common {
+
+		@ConfigKey("berry_bush_requires_pips")
 		public final ConfigValue<Boolean> berriesRequirePips;
 
+
+		@ConfigKey("fox_music_disc_enabled")
 		public final ConfigValue<Boolean> foxMusicDisc;
+
+		@ConfigKey("fox_music_disc_spawn_chance")
 		public final ConfigValue<Double> foxMusicDiscChance;
 
 		Common(ForgeConfigSpec.Builder builder) {
