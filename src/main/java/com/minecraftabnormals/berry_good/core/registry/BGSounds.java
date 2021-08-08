@@ -10,5 +10,5 @@ import net.minecraftforge.fml.common.Mod;
 public class BGSounds {
 	public static final SoundSubRegistryHelper HELPER = BerryGood.REGISTRY_HELPER.getSoundSubHelper();
 
-	public static final RegistryObject<SoundEvent> FOX = HELPER.createSoundEvent("music.record.fox");
+	public static final RegistryObject<SoundEvent> MUSIC_DISC_FOX = HELPER.createSoundEvent("music_disc.fox");
 }

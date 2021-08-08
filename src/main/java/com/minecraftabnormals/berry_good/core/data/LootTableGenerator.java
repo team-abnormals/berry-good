@@ -31,18 +31,18 @@ public class LootTableGenerator extends ForgeLootTableProvider {
 	}
 
 	@Override
-	protected List<Pair<Supplier<Consumer<BiConsumer<ResourceLocation, Builder>>>, LootParameterSet>> getTables() {
+	public List<Pair<Supplier<Consumer<BiConsumer<ResourceLocation, Builder>>>, LootParameterSet>> getTables() {
 		return tables;
 	}
 
 	private static class BlockProvider extends BlockLootTables {
 		@Override
-		protected void addTables() {
+		public void addTables() {
 			this.dropOther(BGBlocks.SWEET_BERRY_BUSH_PIPS.get(), BGItems.SWEET_BERRY_PIPS.get());
 		}
 
 		@Override
-		protected Iterable<Block> getKnownBlocks() {
+		public Iterable<Block> getKnownBlocks() {
 			return ForgeRegistries.BLOCKS.getValues().stream().filter(block -> block.getRegistryName() != null && BerryGood.MOD_ID.equals(block.getRegistryName().getNamespace())).collect(Collectors.toSet());
 		}
 	}

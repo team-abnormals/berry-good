@@ -60,6 +60,8 @@ public class BerryGood {
 		if (event.includeClient()) {
 			dataGenerator.addProvider(new ItemModelGenerator(dataGenerator, existingFileHelper));
 			dataGenerator.addProvider(new BlockModelGenerator(dataGenerator, existingFileHelper));
+			dataGenerator.addProvider(new LanguageGenerator(dataGenerator));
+			dataGenerator.addProvider(new SoundDefinitionGenerator(dataGenerator, existingFileHelper));
 		}
 	}
 }

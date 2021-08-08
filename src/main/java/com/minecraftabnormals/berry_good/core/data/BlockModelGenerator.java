@@ -16,7 +16,7 @@ public class BlockModelGenerator extends BlockStateProvider {
 	}
 
 	@Override
-	protected void registerStatesAndModels() {
+	public void registerStatesAndModels() {
 		registerCross(BGBlocks.SWEET_BERRY_BUSH_PIPS.get());
 	}
 

@@ -17,7 +17,7 @@ public class ItemTagGenerator extends ItemTagsProvider {
 	}
 
 	@Override
-	protected void addTags() {
+	public void addTags() {
 		this.tag(ItemTags.MUSIC_DISCS).add(BGItems.MUSIC_DISC_FOX.get());
 		this.tag(BGItemTags.SEEDS_SWEET_BERRY).add(BGItems.SWEET_BERRY_PIPS.get());
 		this.tag(Tags.Items.SEEDS).addTag(BGItemTags.SEEDS_SWEET_BERRY);

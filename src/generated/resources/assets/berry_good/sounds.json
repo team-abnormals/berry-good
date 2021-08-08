@@ -1,0 +1,10 @@
+{
+  "music_disc.fox": {
+    "sounds": [
+      {
+        "name": "berry_good:records/fox",
+        "stream": true
+      }
+    ]
+  }
+}

@@ -16,7 +16,7 @@ public class ItemModelGenerator extends ItemModelProvider {
 	}
 
 	@Override
-	protected void registerModels() {
+	public void registerModels() {
 		registerGenerated(BGItems.SWEET_BERRY_PIPS.get());
 		registerGenerated(BGItems.SWEET_BERRY_MINCE.get());
 		registerGenerated(BGItems.SWEET_BERRY_MEATBALLS.get());
@@ -25,6 +25,6 @@ public class ItemModelGenerator extends ItemModelProvider {
 
 	private void registerGenerated(Item item) {
 		ResourceLocation itemName = item.getRegistryName();
-		withExistingParent(itemName.getPath(), "item/generated").texture("layer0", new ResourceLocation(BerryGood.MOD_ID, "item/" + itemName.getPath()));
+		withExistingParent(itemName.getPath(), "item/generated").texture("layer0", new ResourceLocation(this.modid, "item/" + itemName.getPath()));
 	}
 }

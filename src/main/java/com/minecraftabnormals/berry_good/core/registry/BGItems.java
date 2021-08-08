@@ -15,7 +15,7 @@ public class BGItems {
 	public static final RegistryObject<Item> SWEET_BERRY_MEATBALLS = HELPER.createItem("sweet_berry_meatballs", () -> new Item(new Item.Properties().tab(ItemGroup.TAB_FOOD).food(Foods.SWEET_BERRY_MEATBALLS)));
 	public static final RegistryObject<Item> SWEET_BERRY_PIPS = HELPER.createItem("sweet_berry_pips", () -> new BlockNamedItem(BGBlocks.SWEET_BERRY_BUSH_PIPS.get(), new Item.Properties().tab(ItemGroup.TAB_MISC)));
 
-	public static final RegistryObject<Item> MUSIC_DISC_FOX = HELPER.createItem("music_disc_fox", () -> new AbnormalsMusicDiscItem(2, BGSounds.FOX, new Item.Properties().stacksTo(1).tab(ItemGroup.TAB_MISC).rarity(Rarity.RARE)));
+	public static final RegistryObject<Item> MUSIC_DISC_FOX = HELPER.createItem("music_disc_fox", () -> new AbnormalsMusicDiscItem(2, BGSounds.MUSIC_DISC_FOX, new Item.Properties().stacksTo(1).tab(ItemGroup.TAB_MISC).rarity(Rarity.RARE)));
 
 	public static class Foods {
 		public static final Food SWEET_BERRY_MINCE = new Food.Builder().nutrition(5).saturationMod(0.2F).build();
