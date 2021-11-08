@@ -2,17 +2,17 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "berry_good:sweet_berry_meatballs_from_campfire_cooking"
+      "berry_good:glow_berry_pips"
     ]
   },
   "criteria": {
-    "has_sweet_berry_mince": {
+    "has_glow_berries": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "berry_good:sweet_berry_mince"
+              "minecraft:glow_berries"
             ]
           }
         ]
@@ -21,13 +21,13 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "berry_good:sweet_berry_meatballs_from_campfire_cooking"
+        "recipe": "berry_good:glow_berry_pips"
       }
     }
   },
   "requirements": [
     [
-      "has_sweet_berry_mince",
+      "has_glow_berries",
       "has_the_recipe"
     ]
   ]

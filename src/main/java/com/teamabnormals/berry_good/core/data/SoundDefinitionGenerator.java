@@ -1,9 +1,9 @@
-package com.minecraftabnormals.berry_good.core.data;
+package com.teamabnormals.berry_good.core.data;
 
-import com.minecraftabnormals.berry_good.core.BerryGood;
-import com.minecraftabnormals.berry_good.core.registry.BGSounds;
+import com.teamabnormals.berry_good.core.BerryGood;
+import com.teamabnormals.berry_good.core.registry.BGSounds;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.common.data.SoundDefinitionsProvider;
 

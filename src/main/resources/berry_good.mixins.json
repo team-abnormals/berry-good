@@ -1,11 +1,11 @@
 {
   "required": true,
-  "package": "com.minecraftabnormals.berry_good.core.mixin",
+  "package": "com.teamabnormals.berry_good.core.mixin",
   "compatibilityLevel": "JAVA_8",
   "minVersion": "0.8",
   "refmap": "berry_good.refmap.json",
   "mixins": [
-    "FoxEntityMixin"
+    "FoxMixin"
   ],
   "injectors": {
     "defaultRequire": 1

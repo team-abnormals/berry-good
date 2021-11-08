@@ -1,10 +1,10 @@
-package com.minecraftabnormals.berry_good.core.registry;
+package com.teamabnormals.berry_good.core.registry;
 
-import com.minecraftabnormals.abnormals_core.core.util.registry.SoundSubRegistryHelper;
-import com.minecraftabnormals.berry_good.core.BerryGood;
-import net.minecraft.util.SoundEvent;
-import net.minecraftforge.fml.RegistryObject;
+import com.teamabnormals.berry_good.core.BerryGood;
+import com.teamabnormals.blueprint.core.util.registry.SoundSubRegistryHelper;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fmllegacy.RegistryObject;
 
 @Mod.EventBusSubscriber(modid = BerryGood.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class BGSounds {

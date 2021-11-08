@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "berry_good:block/cave_vine_pips"
+  }
+}

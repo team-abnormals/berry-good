@@ -7,7 +7,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "berry_good:sweet_berry_pips"
+          "name": "berry_good:glow_berry_pips"
         }
       ],
       "conditions": [

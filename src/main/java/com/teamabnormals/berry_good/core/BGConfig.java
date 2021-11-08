@@ -1,4 +1,4 @@
-package com.minecraftabnormals.berry_good.core;
+package com.teamabnormals.berry_good.core;
 
 import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.common.ForgeConfigSpec.ConfigValue;
@@ -9,7 +9,8 @@ import org.apache.commons.lang3.tuple.Pair;
 public class BGConfig {
 
 	public static class Common {
-		public final ConfigValue<Boolean> berriesRequirePips;
+		public final ConfigValue<Boolean> sweetBerriesRequirePips;
+		public final ConfigValue<Boolean> glowBerriesRequirePips;
 
 		public final ConfigValue<Boolean> foxMusicDisc;
 		public final ConfigValue<Double> foxMusicDiscChance;
@@ -17,7 +18,10 @@ public class BGConfig {
 		Common(ForgeConfigSpec.Builder builder) {
 			builder.push("tweaks");
 			builder.push("sweet_berries");
-			berriesRequirePips = builder.comment("If Sweet Berry Bushes require pips to place, to prevent accidental placement").define("Berries require pips", true);
+			sweetBerriesRequirePips = builder.comment("If Sweet Berry Bushes require pips to place, to prevent accidental placement").define("Sweet Berries require pips", true);
+			builder.pop();
+			builder.push("glow_berries");
+			glowBerriesRequirePips = builder.comment("If Cave Vines require pips to place, to prevent accidental placement").define("Glow Berries require pips", true);
 			builder.pop();
 			builder.pop();
 

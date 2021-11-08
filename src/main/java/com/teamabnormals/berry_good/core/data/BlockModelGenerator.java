@@ -1,10 +1,10 @@
-package com.minecraftabnormals.berry_good.core.data;
+package com.teamabnormals.berry_good.core.data;
 
-import com.minecraftabnormals.berry_good.core.BerryGood;
-import com.minecraftabnormals.berry_good.core.registry.BGBlocks;
-import net.minecraft.block.Block;
+import com.teamabnormals.berry_good.core.BerryGood;
+import com.teamabnormals.berry_good.core.registry.BGBlocks;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
@@ -18,6 +18,7 @@ public class BlockModelGenerator extends BlockStateProvider {
 	@Override
 	public void registerStatesAndModels() {
 		registerCross(BGBlocks.SWEET_BERRY_BUSH_PIPS.get());
+		registerCross(BGBlocks.CAVE_VINE_PIPS.get());
 	}
 
 	private void registerCross(Block block) {
