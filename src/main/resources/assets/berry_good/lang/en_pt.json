@@ -1,7 +1,8 @@
 {
   "block.berry_good.sweet_berry_bush_pips": "Bits o' Land Caper",
-
-  "item.berry_good.sweet_berry_pips": "Bits o' Land Caper",
+  "item.berry_good.music_disc_fox": "Shanty",
+  "item.berry_good.music_disc_fox.desc": "Mista Jub - Fox",
+  "item.berry_good.sweet_berry_meatballs": "Sweet Swine Delight",
   "item.berry_good.sweet_berry_mince": "Raw Pork n' Capers",
-  "item.berry_good.sweet_berry_meatballs": "Sweet Swine Delight"
+  "item.berry_good.sweet_berry_pips": "Bits o' Land Capers"
 }
