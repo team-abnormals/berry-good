@@ -17,14 +17,15 @@ public class BGItemModelProvider extends ItemModelProvider {
 
 	@Override
 	public void registerModels() {
-		registerGenerated(BGItems.SWEET_BERRY_PIPS.get());
-		registerGenerated(BGItems.SWEET_BERRY_MINCE.get());
-		registerGenerated(BGItems.SWEET_BERRY_MEATBALLS.get());
-		registerGenerated(BGItems.GLOW_BERRY_PIPS.get());
-		registerGenerated(BGItems.MUSIC_DISC_FOX.get());
+		this.generated(BGItems.SWEET_BERRY_PIPS.get());
+		this.generated(BGItems.SWEET_BERRY_MINCE.get());
+		this.generated(BGItems.SWEET_BERRY_MEATBALLS.get());
+		this.generated(BGItems.GLOW_BERRY_PIPS.get());
+		this.generated(BGItems.GLOWGURT.get());
+		this.generated(BGItems.MUSIC_DISC_FOX.get());
 	}
 
-	private void registerGenerated(Item item) {
+	private void generated(Item item) {
 		ResourceLocation itemName = item.getRegistryName();
 		withExistingParent(itemName.getPath(), "item/generated").texture("layer0", new ResourceLocation(this.modid, "item/" + itemName.getPath()));
 	}

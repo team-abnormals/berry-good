@@ -7,6 +7,7 @@ import net.minecraft.world.item.Item;
 public class BGItemTags {
 	public static final Tag.Named<Item> SEEDS_SWEET_BERRY = createForgeTag("seeds/sweet_berry");
 	public static final Tag.Named<Item> SEEDS_GLOW_BERRY = createForgeTag("seeds/glow_berry");
+	public static final Tag.Named<Item> MILK = createForgeTag("milk");
 
 	private static Tag.Named<Item> createForgeTag(String name) {
 		return ItemTags.bind("forge:" + name);

@@ -17,11 +17,11 @@ public class BGBlockStateProvider extends BlockStateProvider {
 
 	@Override
 	public void registerStatesAndModels() {
-		registerCross(BGBlocks.SWEET_BERRY_BUSH_PIPS.get());
-		registerCross(BGBlocks.CAVE_VINE_PIPS.get());
+		this.cross(BGBlocks.SWEET_BERRY_BUSH_PIPS.get());
+		this.cross(BGBlocks.CAVE_VINE_PIPS.get());
 	}
 
-	private void registerCross(Block block) {
+	private void cross(Block block) {
 		String blockName = block.getRegistryName().getPath();
 		this.simpleBlock(block, models().cross(blockName, new ResourceLocation(BerryGood.MOD_ID, "block/" + blockName)));
 	}

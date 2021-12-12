@@ -11,6 +11,7 @@ public class BGConfig {
 	public static class Common {
 		public final ConfigValue<Boolean> sweetBerriesRequirePips;
 		public final ConfigValue<Boolean> glowBerriesRequirePips;
+		public final ConfigValue<Boolean> glowBerriesGiveGlowing;
 
 		public final ConfigValue<Boolean> foxMusicDisc;
 		public final ConfigValue<Double> foxMusicDiscChance;
@@ -22,6 +23,7 @@ public class BGConfig {
 			builder.pop();
 			builder.push("glow_berries");
 			glowBerriesRequirePips = builder.comment("If Cave Vines require pips to place, to prevent accidental placement").define("Glow Berries require pips", true);
+			glowBerriesGiveGlowing = builder.comment("If Glow Berries give Glowing upon consumption").define("Glow Berries give Glowing", true);
 			builder.pop();
 			builder.pop();
 
