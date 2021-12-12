@@ -1,4 +1,4 @@
-package com.teamabnormals.berry_good.core.data;
+package com.teamabnormals.berry_good.core.data.server.tags;
 
 import com.teamabnormals.berry_good.core.BerryGood;
 import com.teamabnormals.berry_good.core.registry.BGBlocks;
@@ -7,9 +7,9 @@ import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.tags.BlockTags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
-public class BlockTagGenerator extends BlockTagsProvider {
+public class BGBlockTagsProvider extends BlockTagsProvider {
 
-	public BlockTagGenerator(DataGenerator generator, ExistingFileHelper existingFileHelper) {
+	public BGBlockTagsProvider(DataGenerator generator, ExistingFileHelper existingFileHelper) {
 		super(generator, BerryGood.MOD_ID, existingFileHelper);
 	}
 

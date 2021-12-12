@@ -1,4 +1,4 @@
-package com.teamabnormals.berry_good.core.data;
+package com.teamabnormals.berry_good.core.data.client;
 
 import com.teamabnormals.berry_good.core.BerryGood;
 import com.teamabnormals.berry_good.core.registry.BGItems;
@@ -9,9 +9,9 @@ import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
 
-public class ItemModelGenerator extends ItemModelProvider {
+public class BGItemModelProvider extends ItemModelProvider {
 
-	public ItemModelGenerator(DataGenerator generator, ExistingFileHelper existingFileHelper) {
+	public BGItemModelProvider(DataGenerator generator, ExistingFileHelper existingFileHelper) {
 		super(generator, BerryGood.MOD_ID, existingFileHelper);
 	}
 

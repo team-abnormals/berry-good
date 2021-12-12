@@ -1,4 +1,4 @@
-package com.teamabnormals.berry_good.core.data;
+package com.teamabnormals.berry_good.core.data.client;
 
 import com.teamabnormals.berry_good.core.BerryGood;
 import com.teamabnormals.berry_good.core.registry.BGBlocks;
@@ -9,9 +9,9 @@ import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
 
-public class BlockModelGenerator extends BlockStateProvider {
+public class BGBlockStateProvider extends BlockStateProvider {
 
-	public BlockModelGenerator(DataGenerator generator, ExistingFileHelper existingFileHelper) {
+	public BGBlockStateProvider(DataGenerator generator, ExistingFileHelper existingFileHelper) {
 		super(generator, BerryGood.MOD_ID, existingFileHelper);
 	}
 

@@ -1,6 +1,10 @@
 package com.teamabnormals.berry_good.core;
 
-import com.teamabnormals.berry_good.core.data.*;
+import com.teamabnormals.berry_good.core.data.client.*;
+import com.teamabnormals.berry_good.core.data.server.BGLootTableProvider;
+import com.teamabnormals.berry_good.core.data.server.BGRecipeProvider;
+import com.teamabnormals.berry_good.core.data.server.tags.BGBlockTagsProvider;
+import com.teamabnormals.berry_good.core.data.server.tags.BGItemTagsProvider;
 import com.teamabnormals.berry_good.core.registry.BGBlocks;
 import com.teamabnormals.berry_good.core.registry.BGItems;
 import com.teamabnormals.blueprint.core.util.DataUtil;
@@ -56,18 +60,18 @@ public class BerryGood {
 		ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
 
 		if (event.includeServer()) {
-			BlockTagGenerator blockTagGen = new BlockTagGenerator(dataGenerator, existingFileHelper);
+			BGBlockTagsProvider blockTagGen = new BGBlockTagsProvider(dataGenerator, existingFileHelper);
 			dataGenerator.addProvider(blockTagGen);
-			dataGenerator.addProvider(new ItemTagGenerator(dataGenerator, blockTagGen, existingFileHelper));
-			dataGenerator.addProvider(new LootTableGenerator(dataGenerator));
-			dataGenerator.addProvider(new RecipeGenerator(dataGenerator));
+			dataGenerator.addProvider(new BGItemTagsProvider(dataGenerator, blockTagGen, existingFileHelper));
+			dataGenerator.addProvider(new BGLootTableProvider(dataGenerator));
+			dataGenerator.addProvider(new BGRecipeProvider(dataGenerator));
 		}
 
 		if (event.includeClient()) {
-			dataGenerator.addProvider(new ItemModelGenerator(dataGenerator, existingFileHelper));
-			dataGenerator.addProvider(new BlockModelGenerator(dataGenerator, existingFileHelper));
-			dataGenerator.addProvider(new LanguageGenerator(dataGenerator));
-			dataGenerator.addProvider(new SoundDefinitionGenerator(dataGenerator, existingFileHelper));
+			dataGenerator.addProvider(new BGItemModelProvider(dataGenerator, existingFileHelper));
+			dataGenerator.addProvider(new BGBlockStateProvider(dataGenerator, existingFileHelper));
+			dataGenerator.addProvider(new BGLanguageProvider(dataGenerator));
+			dataGenerator.addProvider(new BGSoundDefinitionsProvider(dataGenerator, existingFileHelper));
 		}
 	}
 }

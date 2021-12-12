@@ -1,4 +1,4 @@
-package com.teamabnormals.berry_good.core.data;
+package com.teamabnormals.berry_good.core.data.server.tags;
 
 import com.teamabnormals.berry_good.core.BerryGood;
 import com.teamabnormals.berry_good.core.other.BGItemTags;
@@ -10,9 +10,9 @@ import net.minecraft.tags.ItemTags;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
-public class ItemTagGenerator extends ItemTagsProvider {
+public class BGItemTagsProvider extends ItemTagsProvider {
 
-	public ItemTagGenerator(DataGenerator generator, BlockTagsProvider blockTagsProvider, ExistingFileHelper existingFileHelper) {
+	public BGItemTagsProvider(DataGenerator generator, BlockTagsProvider blockTagsProvider, ExistingFileHelper existingFileHelper) {
 		super(generator, blockTagsProvider, BerryGood.MOD_ID, existingFileHelper);
 	}
 

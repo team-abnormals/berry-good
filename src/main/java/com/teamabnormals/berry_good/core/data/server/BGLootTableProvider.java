@@ -1,4 +1,4 @@
-package com.teamabnormals.berry_good.core.data;
+package com.teamabnormals.berry_good.core.data.server;
 
 import com.google.common.collect.ImmutableList;
 import com.mojang.datafixers.util.Pair;
@@ -25,10 +25,10 @@ import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
 
-public class LootTableGenerator extends LootTableProvider {
+public class BGLootTableProvider extends LootTableProvider {
 	private final List<Pair<Supplier<Consumer<BiConsumer<ResourceLocation, LootTable.Builder>>>, LootContextParamSet>> tables = ImmutableList.of(Pair.of(BlockProvider::new, LootContextParamSets.BLOCK));
 
-	public LootTableGenerator(DataGenerator generator) {
+	public BGLootTableProvider(DataGenerator generator) {
 		super(generator);
 	}
 

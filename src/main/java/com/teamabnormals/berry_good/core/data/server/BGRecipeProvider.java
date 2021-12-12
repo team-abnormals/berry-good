@@ -1,4 +1,4 @@
-package com.teamabnormals.berry_good.core.data;
+package com.teamabnormals.berry_good.core.data.server;
 
 import com.teamabnormals.berry_good.core.BerryGood;
 import com.teamabnormals.berry_good.core.registry.BGItems;
@@ -14,9 +14,9 @@ import net.minecraft.world.item.crafting.SimpleCookingSerializer;
 
 import java.util.function.Consumer;
 
-public class RecipeGenerator extends RecipeProvider {
+public class BGRecipeProvider extends RecipeProvider {
 
-	public RecipeGenerator(DataGenerator generator) {
+	public BGRecipeProvider(DataGenerator generator) {
 		super(generator);
 	}
 

@@ -1,4 +1,4 @@
-package com.teamabnormals.berry_good.core.data;
+package com.teamabnormals.berry_good.core.data.client;
 
 import com.teamabnormals.berry_good.core.BerryGood;
 import com.teamabnormals.berry_good.core.registry.BGBlocks;
@@ -10,8 +10,8 @@ import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.LanguageProvider;
 import org.apache.commons.lang3.text.WordUtils;
 
-public class LanguageGenerator extends LanguageProvider {
-	public LanguageGenerator(DataGenerator gen) {
+public class BGLanguageProvider extends LanguageProvider {
+	public BGLanguageProvider(DataGenerator gen) {
 		super(gen, BerryGood.MOD_ID, "en_us");
 	}
 
