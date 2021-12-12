@@ -45,7 +45,6 @@ public class SweetBerryPipsBlock extends BushBlock implements BonemealableBlock 
 			worldIn.setBlock(pos, Blocks.SWEET_BERRY_BUSH.defaultBlockState(), 2);
 			ForgeHooks.onCropsGrowPost(worldIn, pos, state);
 		}
-
 	}
 
 	@Override
