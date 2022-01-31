@@ -47,7 +47,7 @@ public class BGAdvancementModifiersProvider {
 	}
 
 	private static Pair<String, Criterion> consumeItem(ItemLike item) {
-		return Pair.of(item.asItem().getRegistryName().toString(), new Criterion(ConsumeItemTrigger.TriggerInstance.usedItem(item.asItem())));
+		return Pair.of(item.asItem().getRegistryName().getPath(), new Criterion(ConsumeItemTrigger.TriggerInstance.usedItem(item.asItem())));
 	}
 
 	private static ModifierDataProvider.ProviderEntry<Advancement.Builder, Void, DeserializationContext> createModifier(String target, ConfiguredModifier<Advancement.Builder, ?, Void, DeserializationContext, ?> modifier) {
@@ -56,14 +56,14 @@ public class BGAdvancementModifiersProvider {
 
 	private static Pair<Optional<Map<String, Criterion>>, Optional<String[]>> collectCriterions(List<Pair<String, Criterion>> criterions) {
 		Optional<Map<String, Criterion>> criterionMap = Optional.of(Maps.newHashMap());
-		ArrayList<String> reqs = Lists.newArrayList();
+		ArrayList<String> requirements = Lists.newArrayList();
 
 		criterions.forEach(pair -> {
 			criterionMap.get().put(BerryGood.MOD_ID + ":" + pair.getFirst(), pair.getSecond());
-			reqs.add(BerryGood.MOD_ID + ":" + pair.getFirst());
+			requirements.add(BerryGood.MOD_ID + ":" + pair.getFirst());
 		});
 
-		return Pair.of(criterionMap, Optional.of(reqs.toArray(String[]::new)));
+		return Pair.of(criterionMap, Optional.of(requirements.toArray(String[]::new)));
 	}
 
 

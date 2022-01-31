@@ -13,17 +13,7 @@
       "config": {
         "mode": "modify",
         "criteria": {
-          "berry_good:berry_good:sweet_berry_mince": {
-            "trigger": "minecraft:consume_item",
-            "conditions": {
-              "item": {
-                "items": [
-                  "berry_good:sweet_berry_mince"
-                ]
-              }
-            }
-          },
-          "berry_good:berry_good:sweet_berry_meatballs": {
+          "berry_good:sweet_berry_meatballs": {
             "trigger": "minecraft:consume_item",
             "conditions": {
               "item": {
@@ -32,14 +22,24 @@
                 ]
               }
             }
+          },
+          "berry_good:sweet_berry_mince": {
+            "trigger": "minecraft:consume_item",
+            "conditions": {
+              "item": {
+                "items": [
+                  "berry_good:sweet_berry_mince"
+                ]
+              }
+            }
           }
         },
         "requirements": [
           [
-            "berry_good:berry_good:sweet_berry_mince"
+            "berry_good:sweet_berry_mince"
           ],
           [
-            "berry_good:berry_good:sweet_berry_meatballs"
+            "berry_good:sweet_berry_meatballs"
           ]
         ]
       }
