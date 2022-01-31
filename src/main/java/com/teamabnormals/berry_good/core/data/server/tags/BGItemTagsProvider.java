@@ -13,8 +13,8 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 
 public class BGItemTagsProvider extends ItemTagsProvider {
 
-	public BGItemTagsProvider(DataGenerator generator, BlockTagsProvider blockTagsProvider, ExistingFileHelper existingFileHelper) {
-		super(generator, blockTagsProvider, BerryGood.MOD_ID, existingFileHelper);
+	public BGItemTagsProvider(DataGenerator generator, BlockTagsProvider blockTagsProvider, ExistingFileHelper fileHelper) {
+		super(generator, blockTagsProvider, BerryGood.MOD_ID, fileHelper);
 	}
 
 	@Override

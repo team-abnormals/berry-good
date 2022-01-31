@@ -1,5 +1,12 @@
 {
-  "advancement": "minecraft:husbandry/plant_seed",
+  "advancement": {
+    "type": "names",
+    "config": [
+      "minecraft:husbandry/plant_seed"
+    ],
+    "conditions": []
+  },
+  "priority": "normal",
   "modifiers": [
     {
       "type": "indexed_requirements",
@@ -7,7 +14,7 @@
         "mode": "modify",
         "index": 0,
         "criteria": {
-          "sweet_berry_bush_pips": {
+          "berry_good:sweet_berry_bush_pips": {
             "trigger": "minecraft:placed_block",
             "conditions": {
               "block": "berry_good:sweet_berry_bush_pips"
@@ -15,9 +22,7 @@
           }
         },
         "requirements": [
-          [
-            "sweet_berry_bush_pips"
-          ]
+          "berry_good:sweet_berry_bush_pips"
         ]
       }
     }

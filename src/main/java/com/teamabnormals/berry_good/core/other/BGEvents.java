@@ -7,9 +7,9 @@ import net.minecraft.world.item.Items;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent.RightClickBlock;
 import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 
-@Mod.EventBusSubscriber(modid = BerryGood.MOD_ID)
+@EventBusSubscriber(modid = BerryGood.MOD_ID)
 public class BGEvents {
 
 	@SubscribeEvent

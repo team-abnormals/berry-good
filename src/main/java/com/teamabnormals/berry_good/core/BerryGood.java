@@ -1,9 +1,13 @@
 package com.teamabnormals.berry_good.core;
 
 import com.mojang.datafixers.util.Pair;
-import com.teamabnormals.berry_good.core.data.client.*;
+import com.teamabnormals.berry_good.core.data.client.BGBlockStateProvider;
+import com.teamabnormals.berry_good.core.data.client.BGItemModelProvider;
+import com.teamabnormals.berry_good.core.data.client.BGLanguageProvider;
+import com.teamabnormals.berry_good.core.data.client.BGSoundDefinitionsProvider;
 import com.teamabnormals.berry_good.core.data.server.BGLootTableProvider;
 import com.teamabnormals.berry_good.core.data.server.BGRecipeProvider;
+import com.teamabnormals.berry_good.core.data.server.modifiers.BGAdvancementModifiersProvider;
 import com.teamabnormals.berry_good.core.data.server.tags.BGBlockTagsProvider;
 import com.teamabnormals.berry_good.core.data.server.tags.BGItemTagsProvider;
 import com.teamabnormals.berry_good.core.registry.BGBlocks;
@@ -39,15 +43,16 @@ public class BerryGood {
 
 	public BerryGood() {
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
+		ModLoadingContext context = ModLoadingContext.get();
+		MinecraftForge.EVENT_BUS.register(this);
 
 		REGISTRY_HELPER.register(bus);
-		MinecraftForge.EVENT_BUS.register(this);
 
 		bus.addListener(this::commonSetup);
 		bus.addListener(this::clientSetup);
 		bus.addListener(this::dataSetup);
 
-		ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, BGConfig.COMMON_SPEC);
+		context.registerConfig(ModConfig.Type.COMMON, BGConfig.COMMON_SPEC);
 	}
 
 	private void commonSetup(FMLCommonSetupEvent event) {
@@ -70,22 +75,23 @@ public class BerryGood {
 	}
 
 	private void dataSetup(GatherDataEvent event) {
-		DataGenerator dataGenerator = event.getGenerator();
-		ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
+		DataGenerator generator = event.getGenerator();
+		ExistingFileHelper fileHelper = event.getExistingFileHelper();
 
 		if (event.includeServer()) {
-			BGBlockTagsProvider blockTagGen = new BGBlockTagsProvider(dataGenerator, existingFileHelper);
-			dataGenerator.addProvider(blockTagGen);
-			dataGenerator.addProvider(new BGItemTagsProvider(dataGenerator, blockTagGen, existingFileHelper));
-			dataGenerator.addProvider(new BGLootTableProvider(dataGenerator));
-			dataGenerator.addProvider(new BGRecipeProvider(dataGenerator));
+			BGBlockTagsProvider blockTags = new BGBlockTagsProvider(generator, fileHelper);
+			generator.addProvider(blockTags);
+			generator.addProvider(new BGItemTagsProvider(generator, blockTags, fileHelper));
+			generator.addProvider(new BGLootTableProvider(generator));
+			generator.addProvider(new BGRecipeProvider(generator));
+			generator.addProvider(BGAdvancementModifiersProvider.createDataProvider(generator));
 		}
 
 		if (event.includeClient()) {
-			dataGenerator.addProvider(new BGItemModelProvider(dataGenerator, existingFileHelper));
-			dataGenerator.addProvider(new BGBlockStateProvider(dataGenerator, existingFileHelper));
-			dataGenerator.addProvider(new BGLanguageProvider(dataGenerator));
-			dataGenerator.addProvider(new BGSoundDefinitionsProvider(dataGenerator, existingFileHelper));
+			generator.addProvider(new BGItemModelProvider(generator, fileHelper));
+			generator.addProvider(new BGBlockStateProvider(generator, fileHelper));
+			generator.addProvider(new BGLanguageProvider(generator));
+			generator.addProvider(new BGSoundDefinitionsProvider(generator, fileHelper));
 		}
 	}
 }

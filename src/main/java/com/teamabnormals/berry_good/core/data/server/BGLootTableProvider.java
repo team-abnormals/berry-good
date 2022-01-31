@@ -19,7 +19,9 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.List;
 import java.util.Map;
-import java.util.function.*;
+import java.util.function.BiConsumer;
+import java.util.function.Consumer;
+import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
 public class BGLootTableProvider extends LootTableProvider {
@@ -39,6 +41,7 @@ public class BGLootTableProvider extends LootTableProvider {
 	}
 
 	private static class BlockProvider extends BlockLoot {
+
 		@Override
 		public void addTables() {
 			this.dropOther(BGBlocks.SWEET_BERRY_BUSH_PIPS.get(), BGItems.SWEET_BERRY_PIPS.get());

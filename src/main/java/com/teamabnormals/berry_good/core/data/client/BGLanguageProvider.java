@@ -11,12 +11,13 @@ import net.minecraftforge.common.data.LanguageProvider;
 import org.apache.commons.lang3.text.WordUtils;
 
 public class BGLanguageProvider extends LanguageProvider {
+
 	public BGLanguageProvider(DataGenerator gen) {
 		super(gen, BerryGood.MOD_ID, "en_us");
 	}
 
 	@Override
-	public void addTranslations() {
+	protected void addTranslations() {
 		this.add(BGBlocks.SWEET_BERRY_BUSH_PIPS.get());
 		this.add(BGBlocks.CAVE_VINE_PIPS.get());
 

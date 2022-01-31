@@ -5,18 +5,19 @@ import com.teamabnormals.berry_good.core.registry.BGItems;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.ItemLike;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
 
 public class BGItemModelProvider extends ItemModelProvider {
 
-	public BGItemModelProvider(DataGenerator generator, ExistingFileHelper existingFileHelper) {
-		super(generator, BerryGood.MOD_ID, existingFileHelper);
+	public BGItemModelProvider(DataGenerator generator, ExistingFileHelper fileHelper) {
+		super(generator, BerryGood.MOD_ID, fileHelper);
 	}
 
 	@Override
-	public void registerModels() {
+	protected void registerModels() {
 		this.generated(BGItems.SWEET_BERRY_PIPS.get());
 		this.generated(BGItems.SWEET_BERRY_MINCE.get());
 		this.generated(BGItems.SWEET_BERRY_MEATBALLS.get());
@@ -26,7 +27,10 @@ public class BGItemModelProvider extends ItemModelProvider {
 	}
 
 	private void generated(Item item) {
-		ResourceLocation itemName = item.getRegistryName();
-		withExistingParent(itemName.getPath(), "item/generated").texture("layer0", new ResourceLocation(this.modid, "item/" + itemName.getPath()));
+		withExistingParent(name(item), "item/generated").texture("layer0", new ResourceLocation(this.modid, "item/" + name(item)));
+	}
+
+	private String name(ItemLike itemLike) {
+		return itemLike.asItem().getRegistryName().getPath();
 	}
 }
