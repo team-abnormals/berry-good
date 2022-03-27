@@ -1,7 +1,7 @@
 package com.teamabnormals.berry_good.core.data.server;
 
 import com.teamabnormals.berry_good.core.BerryGood;
-import com.teamabnormals.berry_good.core.other.BGItemTags;
+import com.teamabnormals.berry_good.core.other.tags.BGItemTags;
 import com.teamabnormals.berry_good.core.registry.BGItems;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.recipes.FinishedRecipe;
