@@ -1,18 +1,21 @@
 {
-  "selector": {
-    "type": "names",
-    "config": [
-      "minecraft:husbandry/balanced_diet"
-    ],
-    "conditions": []
-  },
+  "selector": "minecraft:husbandry/balanced_diet",
   "priority": "normal",
   "modifiers": [
     {
       "type": "criteria",
       "config": {
-        "mode": "modify",
         "criteria": {
+          "berry_good:sweet_berry_mince": {
+            "trigger": "minecraft:consume_item",
+            "conditions": {
+              "item": {
+                "items": [
+                  "berry_good:sweet_berry_mince"
+                ]
+              }
+            }
+          },
           "berry_good:sweet_berry_meatballs": {
             "trigger": "minecraft:consume_item",
             "conditions": {
@@ -23,12 +26,12 @@
               }
             }
           },
-          "berry_good:sweet_berry_mince": {
+          "berry_good:glowgurt": {
             "trigger": "minecraft:consume_item",
             "conditions": {
               "item": {
                 "items": [
-                  "berry_good:sweet_berry_mince"
+                  "berry_good:glowgurt"
                 ]
               }
             }
@@ -40,8 +43,12 @@
           ],
           [
             "berry_good:sweet_berry_meatballs"
+          ],
+          [
+            "berry_good:glowgurt"
           ]
-        ]
+        ],
+        "should_replace_requirements": false
       }
     }
   ]

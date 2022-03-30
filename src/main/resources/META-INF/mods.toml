@@ -20,20 +20,20 @@ license = "https://github.com/team-abnormals/berry-good/blob/main/LICENSE.txt"
 [[dependencies.berry_good]]
     modId = "minecraft"
     mandatory = true
-    versionRange = "[1.18.1,)"
+    versionRange = "[1.18.2,1.19)"
     ordering = "NONE"
     side = "BOTH"
 
 [[dependencies.berry_good]]
     modId = "forge"
     mandatory = true
-    versionRange = "[39.0.0,)"
+    versionRange = "[40.0.18,)"
     ordering = "NONE"
     side = "BOTH"
 
 [[dependencies.berry_good]]
     modId = "blueprint"
     mandatory = true
-    versionRange = "[5.0.0,)"
+    versionRange = "[5.3.0,)"
     ordering = "AFTER"
     side = "BOTH"
