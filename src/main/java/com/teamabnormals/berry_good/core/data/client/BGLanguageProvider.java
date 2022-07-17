@@ -26,7 +26,7 @@ public class BGLanguageProvider extends LanguageProvider {
 		this.add(BGItems.SWEET_BERRY_MEATBALLS.get());
 		this.add(BGItems.GLOW_BERRY_PIPS.get());
 		this.add(BGItems.GLOWGURT.get());
-		this.addDisc(BGItems.MUSIC_DISC_FOX.get(), "Mista Jub - Fox");
+		this.addDisc(BGItems.MUSIC_DISC_FOX.get(), "RENREN - Fox");
 	}
 
 	private void add(Item item) {
