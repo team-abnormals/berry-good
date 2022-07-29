@@ -4,6 +4,7 @@ import com.teamabnormals.berry_good.core.registry.BGItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
@@ -19,8 +20,6 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.common.ForgeHooks;
-
-import java.util.Random;
 
 public class CaveVinePipsBlock extends Block implements BonemealableBlock, CaveVines {
 	private final VoxelShape SHAPE = Block.box(1.0D, 2.0D, 1.0D, 15.0D, 16.0D, 15.0D);
@@ -42,7 +41,7 @@ public class CaveVinePipsBlock extends Block implements BonemealableBlock, CaveV
 	}
 
 	@Override
-	public void tick(BlockState state, ServerLevel level, BlockPos pos, Random random) {
+	public void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
 		super.tick(state, level, pos, random);
 		if (!state.canSurvive(level, pos)) {
 			level.destroyBlock(pos, true);
@@ -91,12 +90,12 @@ public class CaveVinePipsBlock extends Block implements BonemealableBlock, CaveV
 	}
 
 	@Override
-	public boolean isBonemealSuccess(Level level, Random rand, BlockPos pos, BlockState state) {
+	public boolean isBonemealSuccess(Level level, RandomSource rand, BlockPos pos, BlockState state) {
 		return true;
 	}
 
 	@Override
-	public void performBonemeal(ServerLevel level, Random rand, BlockPos pos, BlockState state) {
+	public void performBonemeal(ServerLevel level, RandomSource rand, BlockPos pos, BlockState state) {
 		level.setBlock(pos, Blocks.CAVE_VINES.defaultBlockState(), 2);
 	}
 }

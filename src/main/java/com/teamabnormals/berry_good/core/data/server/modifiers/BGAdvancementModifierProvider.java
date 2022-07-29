@@ -10,14 +10,15 @@ import net.minecraft.advancements.critereon.ConsumeItemTrigger;
 import net.minecraft.advancements.critereon.PlacedBlockTrigger;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.world.item.Item;
+import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 import java.util.Collection;
 
-public class BGAdvancementModifiersProvider extends AdvancementModifierProvider {
+public class BGAdvancementModifierProvider extends AdvancementModifierProvider {
 
-	public BGAdvancementModifiersProvider(DataGenerator dataGenerator) {
-		super(dataGenerator, BerryGood.MOD_ID);
+	public BGAdvancementModifierProvider(DataGenerator generator) {
+		super(generator, BerryGood.MOD_ID);
 	}
 
 	@Override
@@ -26,7 +27,7 @@ public class BGAdvancementModifiersProvider extends AdvancementModifierProvider 
 		Collection<RegistryObject<Item>> items = BGItems.HELPER.getDeferredRegister().getEntries();
 		items.forEach(item -> {
 			if (item.get().isEdible()) {
-				balancedDiet.addCriterion(item.get().getRegistryName().getPath(), ConsumeItemTrigger.TriggerInstance.usedItem(item.get()));
+				balancedDiet.addCriterion(ForgeRegistries.ITEMS.getKey(item.get()).getPath(), ConsumeItemTrigger.TriggerInstance.usedItem(item.get()));
 			}
 		});
 		this.entry("husbandry/balanced_diet").selects("husbandry/balanced_diet").addModifier(balancedDiet.requirements(RequirementsStrategy.AND).build());

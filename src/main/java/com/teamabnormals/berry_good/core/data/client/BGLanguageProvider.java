@@ -8,12 +8,13 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.LanguageProvider;
+import net.minecraftforge.registries.ForgeRegistries;
 import org.apache.commons.lang3.text.WordUtils;
 
 public class BGLanguageProvider extends LanguageProvider {
 
-	public BGLanguageProvider(DataGenerator gen) {
-		super(gen, BerryGood.MOD_ID, "en_us");
+	public BGLanguageProvider(DataGenerator generator) {
+		super(generator, BerryGood.MOD_ID, "en_us");
 	}
 
 	@Override
@@ -30,17 +31,20 @@ public class BGLanguageProvider extends LanguageProvider {
 	}
 
 	private void add(Item item) {
-		if (item.getRegistryName() != null)
-			this.add(item, format(item.getRegistryName()));
+		ResourceLocation name = ForgeRegistries.ITEMS.getKey(item);
+		if (name != null)
+			this.add(item, format(name));
 	}
 
 	private void add(Block block) {
-		if (block.getRegistryName() != null)
-			this.add(block, format(block.getRegistryName()));
+		ResourceLocation name = ForgeRegistries.BLOCKS.getKey(block);
+		if (name != null)
+			this.add(block, format(name));
 	}
 
 	private void addDisc(Item item, String description) {
-		if (item.getRegistryName() != null) {
+		ResourceLocation name = ForgeRegistries.ITEMS.getKey(item);
+		if (name != null) {
 			this.add(item, "Music Disc");
 			this.add(item.getDescriptionId() + ".desc", description);
 		}

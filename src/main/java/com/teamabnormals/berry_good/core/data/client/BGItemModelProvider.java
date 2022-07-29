@@ -8,12 +8,13 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.ItemLike;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.registries.ForgeRegistries;
 
 
 public class BGItemModelProvider extends ItemModelProvider {
 
-	public BGItemModelProvider(DataGenerator generator, ExistingFileHelper fileHelper) {
-		super(generator, BerryGood.MOD_ID, fileHelper);
+	public BGItemModelProvider(DataGenerator generator, ExistingFileHelper existingFileHelper) {
+		super(generator, BerryGood.MOD_ID, existingFileHelper);
 	}
 
 	@Override
@@ -31,6 +32,6 @@ public class BGItemModelProvider extends ItemModelProvider {
 	}
 
 	private String name(ItemLike itemLike) {
-		return itemLike.asItem().getRegistryName().getPath();
+		return ForgeRegistries.ITEMS.getKey(itemLike.asItem()).getPath();
 	}
 }

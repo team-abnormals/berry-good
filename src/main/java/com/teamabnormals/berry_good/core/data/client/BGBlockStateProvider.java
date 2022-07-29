@@ -6,12 +6,13 @@ import net.minecraft.data.DataGenerator;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.registries.ForgeRegistries;
 
 
 public class BGBlockStateProvider extends BlockStateProvider {
 
-	public BGBlockStateProvider(DataGenerator generator, ExistingFileHelper fileHelper) {
-		super(generator, BerryGood.MOD_ID, fileHelper);
+	public BGBlockStateProvider(DataGenerator generator, ExistingFileHelper existingFileHelper) {
+		super(generator, BerryGood.MOD_ID, existingFileHelper);
 	}
 
 	@Override
@@ -25,6 +26,6 @@ public class BGBlockStateProvider extends BlockStateProvider {
 	}
 
 	private String name(Block block) {
-		return block.getRegistryName().getPath();
+		return ForgeRegistries.BLOCKS.getKey(block).getPath();
 	}
 }

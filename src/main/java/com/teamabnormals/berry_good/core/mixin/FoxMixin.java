@@ -2,6 +2,7 @@ package com.teamabnormals.berry_good.core.mixin;
 
 import com.teamabnormals.berry_good.core.BGConfig;
 import com.teamabnormals.berry_good.core.registry.BGItems;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -22,8 +23,8 @@ public abstract class FoxMixin extends LivingEntity {
 	}
 
 	@Inject(method = "populateDefaultEquipmentSlots", at = @At("TAIL"))
-	private void populateDefaultEquipmentSlots(DifficultyInstance difficulty, CallbackInfo info) {
-		if (BGConfig.COMMON.foxMusicDisc.get() && this.random.nextFloat() < BGConfig.COMMON.foxMusicDiscChance.get()) {
+	private void populateDefaultEquipmentSlots(RandomSource randomSource, DifficultyInstance difficultyInstance, CallbackInfo ci) {
+		if (BGConfig.COMMON.foxMusicDisc.get() && randomSource.nextFloat() < BGConfig.COMMON.foxMusicDiscChance.get()) {
 			this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(BGItems.MUSIC_DISC_FOX.get()));
 		}
 	}

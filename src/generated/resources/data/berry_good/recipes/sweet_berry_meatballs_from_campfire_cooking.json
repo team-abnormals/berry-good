@@ -1,9 +1,9 @@
 {
   "type": "minecraft:campfire_cooking",
+  "cookingtime": 600,
+  "experience": 0.35,
   "ingredient": {
     "item": "berry_good:sweet_berry_mince"
   },
-  "result": "berry_good:sweet_berry_meatballs",
-  "experience": 0.35,
-  "cookingtime": 600
+  "result": "berry_good:sweet_berry_meatballs"
 }

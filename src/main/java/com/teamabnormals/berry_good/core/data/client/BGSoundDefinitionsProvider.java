@@ -9,8 +9,8 @@ import net.minecraftforge.common.data.SoundDefinitionsProvider;
 
 public class BGSoundDefinitionsProvider extends SoundDefinitionsProvider {
 
-	public BGSoundDefinitionsProvider(DataGenerator gen, ExistingFileHelper fileHelper) {
-		super(gen, BerryGood.MOD_ID, fileHelper);
+	public BGSoundDefinitionsProvider(DataGenerator generator, ExistingFileHelper existingFileHelper) {
+		super(generator, BerryGood.MOD_ID, existingFileHelper);
 	}
 
 	@Override

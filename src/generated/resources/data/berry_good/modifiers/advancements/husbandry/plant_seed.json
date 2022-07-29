@@ -1,22 +1,20 @@
 {
-  "selector": "minecraft:husbandry/plant_seed",
-  "priority": "normal",
   "modifiers": [
     {
       "type": "criteria",
       "config": {
         "criteria": {
-          "berry_good:sweet_berry_bush_pips": {
-            "trigger": "minecraft:placed_block",
-            "conditions": {
-              "block": "berry_good:sweet_berry_bush_pips"
-            }
-          },
           "berry_good:cave_vine_pips": {
-            "trigger": "minecraft:placed_block",
             "conditions": {
               "block": "berry_good:cave_vine_pips"
-            }
+            },
+            "trigger": "minecraft:placed_block"
+          },
+          "berry_good:sweet_berry_bush_pips": {
+            "conditions": {
+              "block": "berry_good:sweet_berry_bush_pips"
+            },
+            "trigger": "minecraft:placed_block"
           }
         },
         "indexed_requirements": [
@@ -31,5 +29,7 @@
         ]
       }
     }
-  ]
+  ],
+  "priority": "normal",
+  "selector": "minecraft:husbandry/plant_seed"
 }
