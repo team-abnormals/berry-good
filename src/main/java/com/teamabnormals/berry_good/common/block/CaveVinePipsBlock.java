@@ -1,11 +1,15 @@
 package com.teamabnormals.berry_good.common.block;
 
 import com.teamabnormals.berry_good.core.registry.BGItems;
+import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -41,6 +45,13 @@ public class CaveVinePipsBlock extends Block implements BonemealableBlock, CaveV
 	}
 
 	@Override
+	public void setPlacedBy(Level level, BlockPos pos, BlockState state, LivingEntity entity, ItemStack stack) {
+		if (entity instanceof ServerPlayer player) {
+			CriteriaTriggers.PLACED_BLOCK.trigger(player, pos, new ItemStack(Items.GLOW_BERRIES, stack.getCount(), stack.getTag()));
+		}
+	}
+
+	@Override
 	public void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
 		super.tick(state, level, pos, random);
 		if (!state.canSurvive(level, pos)) {
@@ -60,13 +71,10 @@ public class CaveVinePipsBlock extends Block implements BonemealableBlock, CaveV
 		return blockstate.isFaceSturdy(level, blockpos, this.growthDirection) || blockstate.is(Blocks.CAVE_VINES);
 	}
 
+	@Override
 	public BlockState getStateForPlacement(BlockPlaceContext context) {
 		BlockState state = context.getLevel().getBlockState(context.getClickedPos().relative(this.growthDirection.getOpposite()));
-		return !state.is(Blocks.CAVE_VINES) ? this.getStateForPlacement(context.getLevel()) : Blocks.CAVE_VINES.defaultBlockState();
-	}
-
-	public BlockState getStateForPlacement(LevelAccessor level) {
-		return this.defaultBlockState();
+		return !state.is(Blocks.CAVE_VINES) ? this.defaultBlockState() : Blocks.CAVE_VINES.defaultBlockState();
 	}
 
 	@Override
