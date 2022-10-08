@@ -22,7 +22,7 @@ public class BGBlockStateProvider extends BlockStateProvider {
 	}
 
 	private void simpleCross(Block block) {
-		this.simpleBlock(block, models().cross(name(block), blockTexture(block)));
+		this.simpleBlock(block, models().cross(name(block), blockTexture(block)).renderType("cutout"));
 	}
 
 	private String name(Block block) {

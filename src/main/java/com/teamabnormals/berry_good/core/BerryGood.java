@@ -10,12 +10,9 @@ import com.teamabnormals.berry_good.core.data.server.BGRecipeProvider;
 import com.teamabnormals.berry_good.core.data.server.modifiers.BGAdvancementModifierProvider;
 import com.teamabnormals.berry_good.core.data.server.tags.BGBlockTagsProvider;
 import com.teamabnormals.berry_good.core.data.server.tags.BGItemTagsProvider;
-import com.teamabnormals.berry_good.core.registry.BGBlocks;
 import com.teamabnormals.berry_good.core.registry.BGItems;
 import com.teamabnormals.blueprint.core.util.DataUtil;
 import com.teamabnormals.blueprint.core.util.registry.RegistryHelper;
-import net.minecraft.client.renderer.ItemBlockRenderTypes;
-import net.minecraft.client.renderer.RenderType;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -28,7 +25,6 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.util.ObfuscationReflectionHelper;
@@ -49,7 +45,6 @@ public class BerryGood {
 		REGISTRY_HELPER.register(bus);
 
 		bus.addListener(this::commonSetup);
-		bus.addListener(this::clientSetup);
 		bus.addListener(this::dataSetup);
 
 		context.registerConfig(ModConfig.Type.COMMON, BGConfig.COMMON_SPEC);
@@ -64,13 +59,6 @@ public class BerryGood {
 				Supplier<MobEffectInstance> instance = () -> new MobEffectInstance(MobEffects.GLOWING, 300);
 				ObfuscationReflectionHelper.setPrivateValue(FoodProperties.class, Foods.GLOW_BERRIES, Collections.singletonList(Pair.of(instance, 1.0F)), "f_38728_");
 			}
-		});
-	}
-
-	private void clientSetup(FMLClientSetupEvent event) {
-		event.enqueueWork(() -> {
-			ItemBlockRenderTypes.setRenderLayer(BGBlocks.SWEET_BERRY_BUSH_PIPS.get(), RenderType.cutout());
-			ItemBlockRenderTypes.setRenderLayer(BGBlocks.CAVE_VINE_PIPS.get(), RenderType.cutout());
 		});
 	}
 
