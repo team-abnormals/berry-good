@@ -1,20 +1,14 @@
 package com.teamabnormals.berry_good.core;
 
-import com.mojang.datafixers.util.Pair;
 import com.teamabnormals.berry_good.core.data.client.BGItemModelProvider;
 import com.teamabnormals.berry_good.core.data.client.BGLanguageProvider;
 import com.teamabnormals.berry_good.core.data.client.BGSoundDefinitionsProvider;
 import com.teamabnormals.berry_good.core.data.server.BGRecipeProvider;
 import com.teamabnormals.berry_good.core.data.server.modifiers.BGAdvancementModifierProvider;
 import com.teamabnormals.berry_good.core.data.server.tags.BGItemTagsProvider;
-import com.teamabnormals.berry_good.core.registry.BGItems;
-import com.teamabnormals.blueprint.core.util.DataUtil;
+import com.teamabnormals.berry_good.core.other.BGCompat;
 import com.teamabnormals.blueprint.core.util.registry.RegistryHelper;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.food.Foods;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
@@ -24,10 +18,6 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.fml.util.ObfuscationReflectionHelper;
-
-import java.util.Collections;
-import java.util.function.Supplier;
 
 @Mod(BerryGood.MOD_ID)
 public class BerryGood {
@@ -48,15 +38,7 @@ public class BerryGood {
 	}
 
 	private void commonSetup(FMLCommonSetupEvent event) {
-		event.enqueueWork(() -> {
-			DataUtil.registerCompostable(BGItems.SWEET_BERRY_PIPS.get(), 0.30F);
-			DataUtil.registerCompostable(BGItems.GLOW_BERRY_PIPS.get(), 0.30F);
-
-			if (BGConfig.COMMON.glowBerriesGiveGlowing.get()) {
-				Supplier<MobEffectInstance> instance = () -> new MobEffectInstance(MobEffects.GLOWING, 300);
-				ObfuscationReflectionHelper.setPrivateValue(FoodProperties.class, Foods.GLOW_BERRIES, Collections.singletonList(Pair.of(instance, 1.0F)), "f_38728_");
-			}
-		});
+		event.enqueueWork(BGCompat::registerCompat);
 	}
 
 	private void dataSetup(GatherDataEvent event) {
