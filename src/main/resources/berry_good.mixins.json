@@ -5,7 +5,9 @@
   "minVersion": "0.8",
   "refmap": "berry_good.refmap.json",
   "mixins": [
-    "FoxMixin"
+    "CaveVinesBlockMixin",
+    "FoxMixin",
+    "SweetBerryBushBlockMixin"
   ],
   "injectors": {
     "defaultRequire": 1

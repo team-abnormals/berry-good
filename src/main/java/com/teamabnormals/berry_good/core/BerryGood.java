@@ -1,14 +1,11 @@
 package com.teamabnormals.berry_good.core;
 
 import com.mojang.datafixers.util.Pair;
-import com.teamabnormals.berry_good.core.data.client.BGBlockStateProvider;
 import com.teamabnormals.berry_good.core.data.client.BGItemModelProvider;
 import com.teamabnormals.berry_good.core.data.client.BGLanguageProvider;
 import com.teamabnormals.berry_good.core.data.client.BGSoundDefinitionsProvider;
-import com.teamabnormals.berry_good.core.data.server.BGLootTableProvider;
 import com.teamabnormals.berry_good.core.data.server.BGRecipeProvider;
 import com.teamabnormals.berry_good.core.data.server.modifiers.BGAdvancementModifierProvider;
-import com.teamabnormals.berry_good.core.data.server.tags.BGBlockTagsProvider;
 import com.teamabnormals.berry_good.core.data.server.tags.BGItemTagsProvider;
 import com.teamabnormals.berry_good.core.registry.BGItems;
 import com.teamabnormals.blueprint.core.util.DataUtil;
@@ -64,20 +61,16 @@ public class BerryGood {
 
 	private void dataSetup(GatherDataEvent event) {
 		DataGenerator generator = event.getGenerator();
-		ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
+		ExistingFileHelper helper = event.getExistingFileHelper();
 
 		boolean includeServer = event.includeServer();
-		BGBlockTagsProvider blockTags = new BGBlockTagsProvider(generator, existingFileHelper);
-		generator.addProvider(includeServer, blockTags);
-		generator.addProvider(includeServer, new BGItemTagsProvider(generator, blockTags, existingFileHelper));
-		generator.addProvider(includeServer, new BGLootTableProvider(generator));
+		generator.addProvider(includeServer, new BGItemTagsProvider(generator, helper));
 		generator.addProvider(includeServer, new BGRecipeProvider(generator));
 		generator.addProvider(includeServer, new BGAdvancementModifierProvider(generator));
 
 		boolean includeClient = event.includeClient();
-		generator.addProvider(includeClient, new BGItemModelProvider(generator, existingFileHelper));
-		generator.addProvider(includeClient, new BGBlockStateProvider(generator, existingFileHelper));
+		generator.addProvider(includeClient, new BGItemModelProvider(generator, helper));
 		generator.addProvider(includeClient, new BGLanguageProvider(generator));
-		generator.addProvider(includeClient, new BGSoundDefinitionsProvider(generator, existingFileHelper));
+		generator.addProvider(includeClient, new BGSoundDefinitionsProvider(generator, helper));
 	}
 }
