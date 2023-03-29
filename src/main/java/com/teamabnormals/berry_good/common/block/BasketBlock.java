@@ -24,7 +24,7 @@ public class BasketBlock extends DirectionalBlock {
 
 	@Override
 	public BlockState getStateForPlacement(BlockPlaceContext context) {
-		return this.defaultBlockState().setValue(FACING, context.getNearestLookingDirection().getOpposite());
+		return this.defaultBlockState().setValue(FACING, context.getPlayer() == null || context.getPlayer().isCrouching() ? context.getNearestLookingDirection().getOpposite() : context.getClickedFace());
 	}
 
 	@Override
