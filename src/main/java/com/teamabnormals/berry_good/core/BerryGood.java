@@ -7,6 +7,7 @@ import com.teamabnormals.berry_good.core.data.client.BGSoundDefinitionsProvider;
 import com.teamabnormals.berry_good.core.data.server.BGLootTableProvider;
 import com.teamabnormals.berry_good.core.data.server.BGRecipeProvider;
 import com.teamabnormals.berry_good.core.data.server.modifiers.BGAdvancementModifierProvider;
+import com.teamabnormals.berry_good.core.data.server.modifiers.BGLootModifierProvider;
 import com.teamabnormals.berry_good.core.data.server.tags.BGBlockTagsProvider;
 import com.teamabnormals.berry_good.core.data.server.tags.BGItemTagsProvider;
 import com.teamabnormals.berry_good.core.other.BGCompat;
@@ -54,6 +55,7 @@ public class BerryGood {
 		generator.addProvider(includeServer, new BGItemTagsProvider(generator, blockTags, helper));
 		generator.addProvider(includeServer, new BGRecipeProvider(generator));
 		generator.addProvider(includeServer, new BGLootTableProvider(generator));
+		generator.addProvider(includeServer, new BGLootModifierProvider(generator));
 		generator.addProvider(includeServer, new BGAdvancementModifierProvider(generator));
 
 		boolean includeClient = event.includeClient();
