@@ -19,7 +19,8 @@ public class BGLanguageProvider extends LanguageProvider {
 
 	@Override
 	protected void addTranslations() {
-		this.add(BGBlocks.SWEET_BERRY_BASKET.get(), BGBlocks.GLOW_BERRY_BASKET.get());
+		this.add(BGBlocks.SWEET_BERRY_BASKET.get(), "Basket of Sweet Berries");
+		this.add(BGBlocks.GLOW_BERRY_BASKET.get(), "Basket of Glow Berries");
 		this.add(
 				BGItems.SWEET_BERRY_PIPS.get(), BGItems.SWEET_BERRY_MINCE.get(), BGItems.SWEET_BERRY_MEATBALLS.get(),
 				BGItems.GLOW_BERRY_PIPS.get(), BGItems.GLOWGURT.get()
