@@ -12,6 +12,7 @@ import net.minecraft.world.entity.animal.Parrot;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.food.Foods;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.crafting.CompoundIngredient;
 import net.minecraftforge.fml.util.ObfuscationReflectionHelper;
 
@@ -23,6 +24,7 @@ public class BGCompat {
 	public static void registerCompat() {
 		registerAnimalFoods();
 		registerCompostables();
+		registerFlammables();
 		addGlowBerryEffects();
 	}
 
@@ -37,6 +39,11 @@ public class BGCompat {
 
 		DataUtil.registerCompostable(BGItems.SWEET_BERRY_PIPS.get(), 0.30F);
 		DataUtil.registerCompostable(BGItems.GLOW_BERRY_PIPS.get(), 0.30F);
+	}
+
+	private static void registerFlammables() {
+		DataUtil.registerFlammable(BGBlocks.SWEET_BERRY_BASKET.get(), 5, 20);
+		DataUtil.registerFlammable(BGBlocks.GLOW_BERRY_BASKET.get(), 5, 20);
 	}
 
 	private static void addGlowBerryEffects() {
