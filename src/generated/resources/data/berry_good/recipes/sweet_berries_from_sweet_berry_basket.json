@@ -1,0 +1,28 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:not",
+          "value": {
+            "type": "blueprint:quark_flag",
+            "flag": "berry_sack"
+          }
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "ingredients": [
+          {
+            "item": "berry_good:sweet_berry_basket"
+          }
+        ],
+        "result": {
+          "count": 9,
+          "item": "minecraft:sweet_berries"
+        }
+      }
+    }
+  ]
+}

@@ -1,10 +1,13 @@
 package com.teamabnormals.berry_good.core;
 
+import com.teamabnormals.berry_good.core.data.client.BGBlockStateProvider;
 import com.teamabnormals.berry_good.core.data.client.BGItemModelProvider;
 import com.teamabnormals.berry_good.core.data.client.BGLanguageProvider;
 import com.teamabnormals.berry_good.core.data.client.BGSoundDefinitionsProvider;
+import com.teamabnormals.berry_good.core.data.server.BGLootTableProvider;
 import com.teamabnormals.berry_good.core.data.server.BGRecipeProvider;
 import com.teamabnormals.berry_good.core.data.server.modifiers.BGAdvancementModifierProvider;
+import com.teamabnormals.berry_good.core.data.server.tags.BGBlockTagsProvider;
 import com.teamabnormals.berry_good.core.data.server.tags.BGItemTagsProvider;
 import com.teamabnormals.berry_good.core.other.BGCompat;
 import com.teamabnormals.blueprint.core.util.registry.RegistryHelper;
@@ -46,11 +49,15 @@ public class BerryGood {
 		ExistingFileHelper helper = event.getExistingFileHelper();
 
 		boolean includeServer = event.includeServer();
-		generator.addProvider(includeServer, new BGItemTagsProvider(generator, helper));
+		BGBlockTagsProvider blockTags = new BGBlockTagsProvider(generator, helper);
+		generator.addProvider(includeServer, blockTags);
+		generator.addProvider(includeServer, new BGItemTagsProvider(generator, blockTags, helper));
 		generator.addProvider(includeServer, new BGRecipeProvider(generator));
+		generator.addProvider(includeServer, new BGLootTableProvider(generator));
 		generator.addProvider(includeServer, new BGAdvancementModifierProvider(generator));
 
 		boolean includeClient = event.includeClient();
+		generator.addProvider(includeClient, new BGBlockStateProvider(generator, helper));
 		generator.addProvider(includeClient, new BGItemModelProvider(generator, helper));
 		generator.addProvider(includeClient, new BGLanguageProvider(generator));
 		generator.addProvider(includeClient, new BGSoundDefinitionsProvider(generator, helper));

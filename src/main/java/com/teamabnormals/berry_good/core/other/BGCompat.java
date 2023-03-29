@@ -2,6 +2,7 @@ package com.teamabnormals.berry_good.core.other;
 
 import com.mojang.datafixers.util.Pair;
 import com.teamabnormals.berry_good.core.BGConfig;
+import com.teamabnormals.berry_good.core.registry.BGBlocks;
 import com.teamabnormals.berry_good.core.registry.BGItems;
 import com.teamabnormals.blueprint.core.util.DataUtil;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -31,6 +32,9 @@ public class BGCompat {
 	}
 
 	private static void registerCompostables() {
+		DataUtil.registerCompostable(BGBlocks.SWEET_BERRY_BASKET.get(), 1.0F);
+		DataUtil.registerCompostable(BGBlocks.GLOW_BERRY_BASKET.get(), 1.0F);
+
 		DataUtil.registerCompostable(BGItems.SWEET_BERRY_PIPS.get(), 0.30F);
 		DataUtil.registerCompostable(BGItems.GLOW_BERRY_PIPS.get(), 0.30F);
 	}

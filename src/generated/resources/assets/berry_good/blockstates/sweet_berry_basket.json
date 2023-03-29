@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "berry_good:block/sweet_berry_basket",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "berry_good:block/sweet_berry_basket",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north": {
+      "model": "berry_good:block/sweet_berry_basket",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "berry_good:block/sweet_berry_basket",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up": {
+      "model": "berry_good:block/sweet_berry_basket"
+    },
+    "facing=west": {
+      "model": "berry_good:block/sweet_berry_basket",
+      "x": 90,
+      "y": 270
+    }
+  }
+}
