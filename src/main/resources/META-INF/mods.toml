@@ -1,5 +1,5 @@
 modLoader = "javafml"
-loaderVersion = "[32,)"
+loaderVersion = "[47,)"
 issueTrackerURL = "https://github.com/team-abnormals/berry-good/issues"
 license = "https://github.com/team-abnormals/berry-good/blob/main/LICENSE.txt"
 
@@ -20,20 +20,20 @@ license = "https://github.com/team-abnormals/berry-good/blob/main/LICENSE.txt"
 [[dependencies.berry_good]]
     modId = "minecraft"
     mandatory = true
-    versionRange = "[1.19.2,1.20)"
+    versionRange = "[1.20,1.21)"
     ordering = "NONE"
     side = "BOTH"
 
 [[dependencies.berry_good]]
     modId = "forge"
     mandatory = true
-    versionRange = "[43.1.0,)"
+    versionRange = "[47.1.0,)"
     ordering = "NONE"
     side = "BOTH"
 
 [[dependencies.berry_good]]
     modId = "blueprint"
     mandatory = true
-    versionRange = "[6.1.0,)"
+    versionRange = "[7.0.0,)"
     ordering = "AFTER"
     side = "BOTH"
