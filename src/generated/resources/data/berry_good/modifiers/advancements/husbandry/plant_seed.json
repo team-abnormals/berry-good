@@ -6,13 +6,23 @@
         "criteria": {
           "berry_good:cave_vines": {
             "conditions": {
-              "block": "minecraft:cave_vines"
+              "location": [
+                {
+                  "block": "minecraft:cave_vines",
+                  "condition": "minecraft:block_state_property"
+                }
+              ]
             },
             "trigger": "minecraft:placed_block"
           },
           "berry_good:sweet_berry_bush": {
             "conditions": {
-              "block": "minecraft:sweet_berry_bush"
+              "location": [
+                {
+                  "block": "minecraft:sweet_berry_bush",
+                  "condition": "minecraft:block_state_property"
+                }
+              ]
             },
             "trigger": "minecraft:placed_block"
           }

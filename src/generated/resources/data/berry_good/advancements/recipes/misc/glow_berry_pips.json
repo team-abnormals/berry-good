@@ -30,5 +30,6 @@
     "recipes": [
       "berry_good:glow_berry_pips"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }
