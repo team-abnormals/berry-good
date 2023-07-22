@@ -1,9 +1,6 @@
 package com.teamabnormals.berry_good.common.item;
 
-import net.minecraft.core.NonNullList;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemNameBlockItem;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 
 public class BerryPipsBlockItem extends ItemNameBlockItem {
@@ -12,9 +9,4 @@ public class BerryPipsBlockItem extends ItemNameBlockItem {
 		super(block, properties);
 	}
 
-	public void fillItemCategory(CreativeModeTab tab, NonNullList<ItemStack> item) {
-		if (this.allowedIn(tab)) {
-			item.add(new ItemStack(this));
-		}
-	}
 }

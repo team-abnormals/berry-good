@@ -2,14 +2,14 @@ package com.teamabnormals.berry_good.core.data.client;
 
 import com.teamabnormals.berry_good.core.BerryGood;
 import com.teamabnormals.berry_good.core.registry.BGSounds;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.common.data.SoundDefinitionsProvider;
 
 public class BGSoundDefinitionsProvider extends SoundDefinitionsProvider {
 
-	public BGSoundDefinitionsProvider(DataGenerator generator, ExistingFileHelper existingFileHelper) {
+	public BGSoundDefinitionsProvider(PackOutput generator, ExistingFileHelper existingFileHelper) {
 		super(generator, BerryGood.MOD_ID, existingFileHelper);
 	}
 

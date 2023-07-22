@@ -2,7 +2,7 @@ package com.teamabnormals.berry_good.core.data.client;
 
 import com.teamabnormals.berry_good.core.BerryGood;
 import com.teamabnormals.berry_good.core.registry.BGItems;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.common.data.LanguageProvider;
@@ -11,7 +11,7 @@ import org.apache.commons.lang3.text.WordUtils;
 
 public class BGLanguageProvider extends LanguageProvider {
 
-	public BGLanguageProvider(DataGenerator generator) {
+	public BGLanguageProvider(PackOutput generator) {
 		super(generator, BerryGood.MOD_ID, "en_us");
 	}
 
