@@ -1,7 +1,9 @@
 {
-  "block.berry_good.sweet_berry_bush_pips": "달콤한 열매 씨앗",
-
-  "item.berry_good.sweet_berry_pips": "달콤한 열매 씨앗",
-  "item.berry_good.sweet_berry_mince": "익히지 않은 달콤한 열매 미트볼",
-  "item.berry_good.sweet_berry_meatballs": "익힌 달콤한 열매 미트볼"
+  "item.berry_good.glow_berry_pips": "발광 열매 씨앗",
+  "item.berry_good.glowgurt": "글로우거트",
+  "item.berry_good.music_disc_fox": "음반",
+  "item.berry_good.music_disc_fox.desc": "RENREN - Fox",
+  "item.berry_good.sweet_berry_meatballs": "달콤한 열매 미트볼",
+  "item.berry_good.sweet_berry_mince": "다진 달콤한 열매",
+  "item.berry_good.sweet_berry_pips": "달콤한 열매 씨앗"
 }
