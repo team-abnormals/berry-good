@@ -1,7 +1,7 @@
 package com.teamabnormals.berry_good.core.registry;
 
-import com.teamabnormals.berry_good.common.block.BasketBlock;
 import com.teamabnormals.berry_good.core.BerryGood;
+import com.teamabnormals.blueprint.common.block.BlueprintDirectionalBlock;
 import com.teamabnormals.blueprint.core.util.registry.BlockSubRegistryHelper;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.level.block.Block;
@@ -16,8 +16,8 @@ import net.minecraftforge.registries.RegistryObject;
 public class BGBlocks {
 	public static final BlockSubRegistryHelper HELPER = BerryGood.REGISTRY_HELPER.getBlockSubHelper();
 
-	public static final RegistryObject<Block> SWEET_BERRY_BASKET = HELPER.createBlock("sweet_berry_basket", () -> new BasketBlock(BGProperties.SWEET_BERRY_BASKET), CreativeModeTab.TAB_DECORATIONS);
-	public static final RegistryObject<Block> GLOW_BERRY_BASKET = HELPER.createBlock("glow_berry_basket", () -> new BasketBlock(BGProperties.GLOW_BERRY_BASKET), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> SWEET_BERRY_BASKET = HELPER.createBlock("sweet_berry_basket", () -> new BlueprintDirectionalBlock(BGProperties.SWEET_BERRY_BASKET), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> GLOW_BERRY_BASKET = HELPER.createBlock("glow_berry_basket", () -> new BlueprintDirectionalBlock(BGProperties.GLOW_BERRY_BASKET), CreativeModeTab.TAB_DECORATIONS);
 
 	public static class BGProperties {
 		public static final Block.Properties SWEET_BERRY_BASKET = BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.COLOR_RED).strength(1.5F).sound(SoundType.WOOD);

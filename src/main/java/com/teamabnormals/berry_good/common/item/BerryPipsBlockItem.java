@@ -12,6 +12,7 @@ public class BerryPipsBlockItem extends ItemNameBlockItem {
 		super(block, properties);
 	}
 
+	@Override
 	public void fillItemCategory(CreativeModeTab tab, NonNullList<ItemStack> item) {
 		if (this.allowedIn(tab)) {
 			item.add(new ItemStack(this));

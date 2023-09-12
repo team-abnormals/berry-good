@@ -16,7 +16,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public abstract class SweetBerryBushBlockMixin {
 
 	@Inject(method = "getCloneItemStack", at = @At("RETURN"), cancellable = true)
-	private void populateDefaultEquipmentSlots(BlockGetter level, BlockPos pos, BlockState state, CallbackInfoReturnable<ItemStack> cir) {
+	private void getCloneItemStack(BlockGetter level, BlockPos pos, BlockState state, CallbackInfoReturnable<ItemStack> cir) {
 		if (BGConfig.COMMON.sweetBerriesRequirePips.get()) {
 			cir.setReturnValue(new ItemStack(BGItems.SWEET_BERRY_PIPS.get()));
 		}

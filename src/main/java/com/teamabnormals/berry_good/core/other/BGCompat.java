@@ -7,13 +7,8 @@ import com.teamabnormals.berry_good.core.registry.BGItems;
 import com.teamabnormals.blueprint.core.util.DataUtil;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.animal.Chicken;
-import net.minecraft.world.entity.animal.Parrot;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.food.Foods;
-import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraftforge.common.crafting.CompoundIngredient;
 import net.minecraftforge.fml.util.ObfuscationReflectionHelper;
 
 import java.util.Collections;
@@ -29,8 +24,7 @@ public class BGCompat {
 	}
 
 	private static void registerAnimalFoods() {
-		Chicken.FOOD_ITEMS = CompoundIngredient.of(Chicken.FOOD_ITEMS, Ingredient.of(BGItems.SWEET_BERRY_PIPS.get(), BGItems.GLOW_BERRY_PIPS.get()));
-		Collections.addAll(Parrot.TAME_FOOD, BGItems.SWEET_BERRY_PIPS.get(), BGItems.GLOW_BERRY_PIPS.get());
+		DataUtil.addParrotFood(BGItems.SWEET_BERRY_PIPS.get(), BGItems.GLOW_BERRY_PIPS.get());
 	}
 
 	private static void registerCompostables() {
