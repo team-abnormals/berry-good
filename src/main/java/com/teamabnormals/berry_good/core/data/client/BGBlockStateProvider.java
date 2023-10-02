@@ -2,7 +2,7 @@ package com.teamabnormals.berry_good.core.data.client;
 
 import com.teamabnormals.berry_good.core.BerryGood;
 import com.teamabnormals.berry_good.core.registry.BGBlocks;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
@@ -12,8 +12,8 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 public class BGBlockStateProvider extends BlockStateProvider {
 
-	public BGBlockStateProvider(DataGenerator generator, ExistingFileHelper fileHelper) {
-		super(generator, BerryGood.MOD_ID, fileHelper);
+	public BGBlockStateProvider(PackOutput packOutput, ExistingFileHelper fileHelper) {
+		super(packOutput, BerryGood.MOD_ID, fileHelper);
 	}
 
 	@Override

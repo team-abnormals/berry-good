@@ -3,7 +3,9 @@ package com.teamabnormals.berry_good.core.data.client;
 import com.teamabnormals.berry_good.core.BerryGood;
 import com.teamabnormals.berry_good.core.registry.BGItems;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.packs.repository.Pack;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.ItemLike;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
@@ -13,8 +15,8 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 public class BGItemModelProvider extends ItemModelProvider {
 
-	public BGItemModelProvider(DataGenerator generator, ExistingFileHelper existingFileHelper) {
-		super(generator, BerryGood.MOD_ID, existingFileHelper);
+	public BGItemModelProvider(PackOutput packOutput, ExistingFileHelper existingFileHelper) {
+		super(packOutput, BerryGood.MOD_ID, existingFileHelper);
 	}
 
 	@Override

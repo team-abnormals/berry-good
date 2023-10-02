@@ -13,6 +13,7 @@
       ],
       "recipe": {
         "type": "minecraft:crafting_shaped",
+        "category": "misc",
         "key": {
           "#": {
             "item": "minecraft:sweet_berries"
@@ -25,7 +26,8 @@
         ],
         "result": {
           "item": "berry_good:sweet_berry_basket"
-        }
+        },
+        "show_notification": true
       }
     }
   ]

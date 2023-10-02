@@ -30,5 +30,6 @@
     "recipes": [
       "berry_good:glowgurt"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

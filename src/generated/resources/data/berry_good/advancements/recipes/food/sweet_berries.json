@@ -4,12 +4,12 @@
       "advancement": {
         "parent": "minecraft:recipes/root",
         "criteria": {
-          "has_glow_berry_basket": {
+          "has_sweet_berry_basket": {
             "conditions": {
               "items": [
                 {
                   "items": [
-                    "berry_good:glow_berry_basket"
+                    "berry_good:sweet_berry_basket"
                   ]
                 }
               ]
@@ -18,29 +18,30 @@
           },
           "has_the_recipe": {
             "conditions": {
-              "recipe": "berry_good:glow_berries_from_glow_berry_basket"
+              "recipe": "berry_good:sweet_berries"
             },
             "trigger": "minecraft:recipe_unlocked"
           }
         },
         "requirements": [
           [
-            "has_glow_berry_basket",
+            "has_sweet_berry_basket",
             "has_the_recipe"
           ]
         ],
         "rewards": {
           "recipes": [
-            "berry_good:glow_berries_from_glow_berry_basket"
+            "berry_good:sweet_berries"
           ]
-        }
+        },
+        "sends_telemetry_event": false
       },
       "conditions": [
         {
           "type": "forge:not",
           "value": {
             "type": "blueprint:quark_flag",
-            "flag": "glowberry_sack"
+            "flag": "berry_sack"
           }
         }
       ]

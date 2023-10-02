@@ -33,7 +33,8 @@
           "recipes": [
             "berry_good:glow_berry_basket"
           ]
-        }
+        },
+        "sends_telemetry_event": false
       },
       "conditions": [
         {

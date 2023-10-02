@@ -30,5 +30,6 @@
     "recipes": [
       "berry_good:sweet_berry_meatballs"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }
