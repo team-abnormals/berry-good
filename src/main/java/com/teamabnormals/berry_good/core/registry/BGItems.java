@@ -13,7 +13,8 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.registries.RegistryObject;
 
-import static com.teamabnormals.berry_good.core.registry.BGBlocks.*;
+import static com.teamabnormals.berry_good.core.registry.BGBlocks.GLOW_BERRY_BASKET;
+import static com.teamabnormals.berry_good.core.registry.BGBlocks.SWEET_BERRY_BASKET;
 import static net.minecraft.world.item.CreativeModeTabs.*;
 import static net.minecraft.world.item.crafting.Ingredient.of;
 

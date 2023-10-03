@@ -24,7 +24,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class BGLootTableProvider extends LootTableProvider {
-	
+
 	public BGLootTableProvider(PackOutput output) {
 		super(output, BuiltInLootTables.all(), ImmutableList.of(new LootTableProvider.SubProviderEntry(BGBlockLoot::new, LootContextParamSets.BLOCK)));
 	}

@@ -11,7 +11,6 @@ import com.teamabnormals.berry_good.core.data.server.modifiers.BGLootModifierPro
 import com.teamabnormals.berry_good.core.data.server.tags.BGBlockTagsProvider;
 import com.teamabnormals.berry_good.core.data.server.tags.BGItemTagsProvider;
 import com.teamabnormals.berry_good.core.other.BGCompat;
-import com.teamabnormals.berry_good.core.registry.BGBlocks;
 import com.teamabnormals.berry_good.core.registry.BGItems;
 import com.teamabnormals.blueprint.core.util.registry.RegistryHelper;
 import net.minecraft.core.HolderLookup.Provider;

@@ -34,6 +34,6 @@ license = "https://github.com/team-abnormals/berry-good/blob/main/LICENSE.txt"
 [[dependencies.berry_good]]
     modId = "blueprint"
     mandatory = true
-    versionRange = "[7.0.0,)"
+    versionRange = "[7.0.1,)"
     ordering = "AFTER"
     side = "BOTH"
