@@ -39,10 +39,10 @@ public class BGItems {
 
 	public static void setupTabEditors() {
 		CreativeModeTabContentsPopulator.mod(BerryGood.MOD_ID)
-				.predicate(event -> event.getTabKey().equals(NATURAL_BLOCKS) && BGConfig.COMMON.sweetBerriesRequirePips.get())
+				.predicate(event -> event.getTabKey() == NATURAL_BLOCKS && BGConfig.COMMON.sweetBerriesRequirePips.get())
 				.addItemsAfter(of(Items.BEETROOT_SEEDS), SWEET_BERRY_PIPS)
 				.editor(event -> event.getEntries().remove(new ItemStack(Items.SWEET_BERRIES)))
-				.predicate(event -> event.getTabKey().equals(NATURAL_BLOCKS) && BGConfig.COMMON.glowBerriesRequirePips.get())
+				.predicate(event -> event.getTabKey() == NATURAL_BLOCKS && BGConfig.COMMON.glowBerriesRequirePips.get())
 				.addItemsAfter(of(Items.BEETROOT_SEEDS), GLOW_BERRY_PIPS)
 				.editor(event -> event.getEntries().remove(new ItemStack(Items.GLOW_BERRIES)))
 				.tab(NATURAL_BLOCKS)
