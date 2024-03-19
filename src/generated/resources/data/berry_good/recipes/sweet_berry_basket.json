@@ -1,34 +1,18 @@
 {
-  "type": "forge:conditional",
-  "recipes": [
-    {
-      "conditions": [
-        {
-          "type": "forge:not",
-          "value": {
-            "type": "blueprint:quark_flag",
-            "flag": "berry_sack"
-          }
-        }
-      ],
-      "recipe": {
-        "type": "minecraft:crafting_shaped",
-        "category": "misc",
-        "key": {
-          "#": {
-            "item": "minecraft:sweet_berries"
-          }
-        },
-        "pattern": [
-          "###",
-          "###",
-          "###"
-        ],
-        "result": {
-          "item": "berry_good:sweet_berry_basket"
-        },
-        "show_notification": true
-      }
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "minecraft:sweet_berries"
     }
-  ]
+  },
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "result": {
+    "item": "berry_good:sweet_berry_basket"
+  },
+  "show_notification": true
 }
