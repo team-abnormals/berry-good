@@ -41,10 +41,14 @@ public class BGItems {
 		CreativeModeTabContentsPopulator.mod(BerryGood.MOD_ID)
 				.predicate(event -> event.getTabKey() == NATURAL_BLOCKS && BGConfig.COMMON.sweetBerriesRequirePips.get())
 				.addItemsAfter(of(Items.BEETROOT_SEEDS), SWEET_BERRY_PIPS)
-				.editor(event -> event.getEntries().remove(new ItemStack(Items.SWEET_BERRIES)))
+				.editor(event -> event.getEntries().remove(new ItemStack(Items.SWEET_BERRIES)));
+
+		CreativeModeTabContentsPopulator.mod(BerryGood.MOD_ID)
 				.predicate(event -> event.getTabKey() == NATURAL_BLOCKS && BGConfig.COMMON.glowBerriesRequirePips.get())
 				.addItemsAfter(of(Items.BEETROOT_SEEDS), GLOW_BERRY_PIPS)
-				.editor(event -> event.getEntries().remove(new ItemStack(Items.GLOW_BERRIES)))
+				.editor(event -> event.getEntries().remove(new ItemStack(Items.GLOW_BERRIES)));
+
+		CreativeModeTabContentsPopulator.mod(BerryGood.MOD_ID)
 				.tab(NATURAL_BLOCKS)
 				.addItemsAfter(of(Items.HAY_BLOCK), SWEET_BERRY_BASKET, GLOW_BERRY_BASKET)
 				.tab(FOOD_AND_DRINKS)
