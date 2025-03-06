@@ -15,5 +15,5 @@
       "rolls": 1.0
     }
   },
-  "selector": "minecraft:loot_tables/blocks/sweet_berry_bush"
+  "selector": "minecraft:loot_table/blocks/sweet_berry_bush"
 }

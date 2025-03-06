@@ -21,12 +21,12 @@ public class BGDataRemolderProvider extends RemolderProvider {
 
 	@Override
 	protected void registerEntries(Provider provider) {
-		this.entry("sweet_berry_bush").path("minecraft:loot_tables/blocks/sweet_berry_bush").remolder(LootRemolders.addPool(LootPool.lootPool()
+		this.entry("sweet_berry_bush").path("minecraft:loot_table/blocks/sweet_berry_bush").remolder(LootRemolders.addPool(LootPool.lootPool()
 				.name(BerryGood.MOD_ID + ":sweet_berry_pips")
 				.setRolls(ConstantValue.exactly(1.0F))
 				.add(LootItem.lootTableItem(BGItems.SWEET_BERRY_PIPS.get())).build()));
 
-		this.entry("cave_vines").path("minecraft:loot_tables/blocks/cave_vines").remolder(LootRemolders.addPool(LootPool.lootPool()
+		this.entry("cave_vines").path("minecraft:loot_table/blocks/cave_vines").remolder(LootRemolders.addPool(LootPool.lootPool()
 				.name(BerryGood.MOD_ID + ":glow_berry_pips")
 				.setRolls(ConstantValue.exactly(1.0F))
 				.add(LootItem.lootTableItem(BGItems.GLOW_BERRY_PIPS.get())).build()));
