@@ -1,11 +1,9 @@
 package com.teamabnormals.berry_good.core;
 
-import net.minecraftforge.common.ForgeConfigSpec;
-import net.minecraftforge.common.ForgeConfigSpec.ConfigValue;
-import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
+import net.neoforged.neoforge.common.ModConfigSpec;
+import net.neoforged.neoforge.common.ModConfigSpec.ConfigValue;
 import org.apache.commons.lang3.tuple.Pair;
 
-@EventBusSubscriber(modid = BerryGood.MOD_ID)
 public class BGConfig {
 
 	public static class Common {
@@ -16,7 +14,7 @@ public class BGConfig {
 		public final ConfigValue<Boolean> foxMusicDisc;
 		public final ConfigValue<Double> foxMusicDiscChance;
 
-		Common(ForgeConfigSpec.Builder builder) {
+		Common(ModConfigSpec.Builder builder) {
 			builder.push("tweaks");
 			builder.push("sweet_berries");
 			sweetBerriesRequirePips = builder.comment("If Sweet Berry Bushes require pips to place, to prevent accidental placement").define("Sweet Berries require pips", true);
@@ -36,11 +34,11 @@ public class BGConfig {
 		}
 	}
 
-	public static final ForgeConfigSpec COMMON_SPEC;
+	public static final ModConfigSpec COMMON_SPEC;
 	public static final Common COMMON;
 
 	static {
-		final Pair<Common, ForgeConfigSpec> commonSpecPair = new ForgeConfigSpec.Builder().configure(Common::new);
+		final Pair<Common, ModConfigSpec> commonSpecPair = new ModConfigSpec.Builder().configure(Common::new);
 		COMMON_SPEC = commonSpecPair.getRight();
 		COMMON = commonSpecPair.getLeft();
 	}

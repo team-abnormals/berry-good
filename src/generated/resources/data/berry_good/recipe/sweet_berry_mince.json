@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:sweet_berries"
+    },
+    {
+      "item": "minecraft:porkchop"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "berry_good:sweet_berry_mince"
+  }
+}

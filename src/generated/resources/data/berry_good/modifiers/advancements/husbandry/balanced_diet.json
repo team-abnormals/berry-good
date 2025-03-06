@@ -7,9 +7,7 @@
           "berry_good:glowgurt": {
             "conditions": {
               "item": {
-                "items": [
-                  "berry_good:glowgurt"
-                ]
+                "items": "berry_good:glowgurt"
               }
             },
             "trigger": "minecraft:consume_item"
@@ -17,9 +15,7 @@
           "berry_good:sweet_berry_meatballs": {
             "conditions": {
               "item": {
-                "items": [
-                  "berry_good:sweet_berry_meatballs"
-                ]
+                "items": "berry_good:sweet_berry_meatballs"
               }
             },
             "trigger": "minecraft:consume_item"
@@ -27,14 +23,13 @@
           "berry_good:sweet_berry_mince": {
             "conditions": {
               "item": {
-                "items": [
-                  "berry_good:sweet_berry_mince"
-                ]
+                "items": "berry_good:sweet_berry_mince"
               }
             },
             "trigger": "minecraft:consume_item"
           }
         },
+        "indexed_requirements": [],
         "requirements": [
           [
             "berry_good:sweet_berry_mince"

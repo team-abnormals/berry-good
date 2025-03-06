@@ -1,0 +1,8 @@
+{
+  "comparator_output": 2,
+  "description": {
+    "translate": "jukebox_song.berry_good.fox"
+  },
+  "length_in_seconds": 116.0,
+  "sound_event": "berry_good:music_disc.fox"
+}

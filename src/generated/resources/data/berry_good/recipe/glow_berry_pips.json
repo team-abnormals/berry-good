@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:glow_berries"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "berry_good:glow_berry_pips"
+  }
+}

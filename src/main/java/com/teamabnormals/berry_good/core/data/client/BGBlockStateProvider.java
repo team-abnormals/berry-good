@@ -2,18 +2,18 @@ package com.teamabnormals.berry_good.core.data.client;
 
 import com.teamabnormals.berry_good.core.BerryGood;
 import com.teamabnormals.berry_good.core.registry.BGBlocks;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
-import net.minecraftforge.client.model.generators.BlockStateProvider;
-import net.minecraftforge.client.model.generators.ModelFile.ExistingModelFile;
-import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.registries.ForgeRegistries;
+import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
+import net.neoforged.neoforge.client.model.generators.ModelFile.ExistingModelFile;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
 public class BGBlockStateProvider extends BlockStateProvider {
 
-	public BGBlockStateProvider(PackOutput packOutput, ExistingFileHelper fileHelper) {
-		super(packOutput, BerryGood.MOD_ID, fileHelper);
+	public BGBlockStateProvider(PackOutput output, ExistingFileHelper helper) {
+		super(output, BerryGood.MOD_ID, helper);
 	}
 
 	@Override
@@ -32,10 +32,10 @@ public class BGBlockStateProvider extends BlockStateProvider {
 	}
 
 	private String name(Block block) {
-		return ForgeRegistries.BLOCKS.getKey(block).getPath();
+		return BuiltInRegistries.BLOCK.getKey(block).getPath();
 	}
 
 	private ResourceLocation suffix(ResourceLocation rl, String suffix) {
-		return new ResourceLocation(rl.getNamespace(), rl.getPath() + suffix);
+		return ResourceLocation.fromNamespaceAndPath(rl.getNamespace(), rl.getPath() + suffix);
 	}
 }

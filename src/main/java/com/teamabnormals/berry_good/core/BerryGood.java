@@ -4,10 +4,8 @@ import com.teamabnormals.berry_good.core.data.client.BGBlockStateProvider;
 import com.teamabnormals.berry_good.core.data.client.BGItemModelProvider;
 import com.teamabnormals.berry_good.core.data.client.BGLanguageProvider;
 import com.teamabnormals.berry_good.core.data.client.BGSoundDefinitionsProvider;
-import com.teamabnormals.berry_good.core.data.server.BGLootTableProvider;
-import com.teamabnormals.berry_good.core.data.server.BGRecipeProvider;
+import com.teamabnormals.berry_good.core.data.server.*;
 import com.teamabnormals.berry_good.core.data.server.modifiers.BGAdvancementModifierProvider;
-import com.teamabnormals.berry_good.core.data.server.modifiers.BGLootModifierProvider;
 import com.teamabnormals.berry_good.core.data.server.tags.BGBlockTagsProvider;
 import com.teamabnormals.berry_good.core.data.server.tags.BGItemTagsProvider;
 import com.teamabnormals.berry_good.core.other.BGCompat;
@@ -16,17 +14,15 @@ import com.teamabnormals.blueprint.core.util.registry.RegistryHelper;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.data.event.GatherDataEvent;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.fml.DistExecutor;
-import net.minecraftforge.fml.ModLoadingContext;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.config.ModConfig;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.fml.ModContainer;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.config.ModConfig;
+import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.fml.loading.FMLEnvironment;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.data.event.GatherDataEvent;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -35,21 +31,17 @@ public class BerryGood {
 	public static final String MOD_ID = "berry_good";
 	public static final RegistryHelper REGISTRY_HELPER = new RegistryHelper(MOD_ID);
 
-	public BerryGood() {
-		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
-		ModLoadingContext context = ModLoadingContext.get();
-		MinecraftForge.EVENT_BUS.register(this);
-
+	public BerryGood(IEventBus bus, ModContainer container) {
 		REGISTRY_HELPER.register(bus);
 
 		bus.addListener(this::commonSetup);
 		bus.addListener(this::dataSetup);
 
-		DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> {
+		if (FMLEnvironment.dist == Dist.CLIENT) {
 			BGItems.setupTabEditors();
-		});
+		}
 
-		context.registerConfig(ModConfig.Type.COMMON, BGConfig.COMMON_SPEC);
+		container.registerConfig(ModConfig.Type.COMMON, BGConfig.COMMON_SPEC);
 	}
 
 	private void commonSetup(FMLCommonSetupEvent event) {
@@ -59,22 +51,27 @@ public class BerryGood {
 	private void dataSetup(GatherDataEvent event) {
 		DataGenerator generator = event.getGenerator();
 		PackOutput output = generator.getPackOutput();
-		CompletableFuture<Provider> lookupProvider = event.getLookupProvider();
+		CompletableFuture<Provider> provider = event.getLookupProvider();
 		ExistingFileHelper helper = event.getExistingFileHelper();
 
-		boolean includeServer = event.includeServer();
-		BGBlockTagsProvider blockTags = new BGBlockTagsProvider(output, lookupProvider, helper);
-		generator.addProvider(includeServer, blockTags);
-		generator.addProvider(includeServer, new BGItemTagsProvider(output, lookupProvider, blockTags.contentsGetter(), helper));
-		generator.addProvider(includeServer, new BGRecipeProvider(output));
-		generator.addProvider(includeServer, new BGLootTableProvider(output));
-		generator.addProvider(includeServer, new BGLootModifierProvider(output, lookupProvider));
-		generator.addProvider(includeServer, new BGAdvancementModifierProvider(output, lookupProvider));
+		boolean server = event.includeServer();
+		BGDatapackProvider datapack = new BGDatapackProvider(output, provider);
+		generator.addProvider(server, datapack);
+		provider = datapack.getRegistryProvider();
 
-		boolean includeClient = event.includeClient();
-		generator.addProvider(includeClient, new BGBlockStateProvider(output, helper));
-		generator.addProvider(includeClient, new BGItemModelProvider(output, helper));
-		generator.addProvider(includeClient, new BGLanguageProvider(output));
-		generator.addProvider(includeClient, new BGSoundDefinitionsProvider(output, helper));
+		BGBlockTagsProvider blockTags = new BGBlockTagsProvider(output, provider, helper);
+		generator.addProvider(server, blockTags);
+		generator.addProvider(server, new BGItemTagsProvider(output, provider, blockTags.contentsGetter(), helper));
+		generator.addProvider(server, new BGRecipeProvider(output, provider));
+		generator.addProvider(server, BGLootTableProvider.create(output, provider));
+		generator.addProvider(server, new BGDataMapProvider(output, provider));
+		generator.addProvider(server, new BGDataRemolderProvider(output, provider));
+		generator.addProvider(server, new BGAdvancementModifierProvider(output, provider));
+
+		boolean client = event.includeClient();
+		generator.addProvider(client, new BGBlockStateProvider(output, helper));
+		generator.addProvider(client, new BGItemModelProvider(output, helper));
+		generator.addProvider(client, new BGLanguageProvider(output));
+		generator.addProvider(client, new BGSoundDefinitionsProvider(output, helper));
 	}
 }

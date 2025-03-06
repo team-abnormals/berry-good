@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "berry_good:sweet_berry_basket"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "minecraft:sweet_berries"
+  }
+}

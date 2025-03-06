@@ -2,14 +2,13 @@ package com.teamabnormals.berry_good.core.data.client;
 
 import com.teamabnormals.berry_good.core.BerryGood;
 import com.teamabnormals.berry_good.core.registry.BGItems;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.ItemLike;
-import net.minecraftforge.client.model.generators.ItemModelProvider;
-import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.registries.ForgeRegistries;
-
+import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
 public class BGItemModelProvider extends ItemModelProvider {
 
@@ -28,10 +27,10 @@ public class BGItemModelProvider extends ItemModelProvider {
 	}
 
 	private void generated(Item item) {
-		withExistingParent(name(item), "item/generated").texture("layer0", new ResourceLocation(this.modid, "item/" + name(item)));
+		withExistingParent(name(item), "item/generated").texture("layer0", ResourceLocation.fromNamespaceAndPath(this.modid, "item/" + name(item)));
 	}
 
 	private String name(ItemLike itemLike) {
-		return ForgeRegistries.ITEMS.getKey(itemLike.asItem()).getPath();
+		return BuiltInRegistries.ITEM.getKey(itemLike.asItem()).getPath();
 	}
 }

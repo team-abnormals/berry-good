@@ -1,0 +1,19 @@
+{
+  "molding": "json",
+  "remolder": {
+    "type": "add",
+    "target": "pools[]",
+    "value": {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "berry_good:glow_berry_pips"
+        }
+      ],
+      "name": "berry_good:glow_berry_pips",
+      "rolls": 1.0
+    }
+  },
+  "selector": "minecraft:loot_tables/blocks/cave_vines"
+}

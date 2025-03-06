@@ -1,0 +1,16 @@
+{
+  "values": {
+    "berry_good:glow_berry_basket": {
+      "chance": 1.0
+    },
+    "berry_good:glow_berry_pips": {
+      "chance": 0.3
+    },
+    "berry_good:sweet_berry_basket": {
+      "chance": 1.0
+    },
+    "berry_good:sweet_berry_pips": {
+      "chance": 0.3
+    }
+  }
+}

@@ -36,7 +36,8 @@
               "berry_good:cave_vines"
             ]
           }
-        ]
+        ],
+        "should_replace_requirements": false
       }
     }
   ],
