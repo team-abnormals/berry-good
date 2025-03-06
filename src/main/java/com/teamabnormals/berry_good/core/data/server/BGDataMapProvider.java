@@ -19,8 +19,8 @@ public class BGDataMapProvider extends DataMapProvider {
 	@Override
 	protected void gather(Provider provider) {
 		this.builder(NeoForgeDataMaps.COMPOSTABLES)
-				.add(BGBlocks.SWEET_BERRY_BASKET.get().asItem().builtInRegistryHolder(), new Compostable(1.0F), false)
-				.add(BGBlocks.GLOW_BERRY_BASKET.get().asItem().builtInRegistryHolder(), new Compostable(1.0F), false)
+				.add(BGBlocks.SWEET_BERRY_BASKET.getId(), new Compostable(1.0F), false)
+				.add(BGBlocks.GLOW_BERRY_BASKET.getId(), new Compostable(1.0F), false)
 				.add(BGItems.SWEET_BERRY_PIPS, new Compostable(0.3F), false)
 				.add(BGItems.GLOW_BERRY_PIPS, new Compostable(0.3F), false);
 	}

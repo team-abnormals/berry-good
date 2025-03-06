@@ -2,7 +2,7 @@ package com.teamabnormals.berry_good.core.registry;
 
 import com.teamabnormals.berry_good.core.BGConfig;
 import com.teamabnormals.berry_good.core.BerryGood;
-import com.teamabnormals.blueprint.core.events.LoadThisClassEvent;
+import com.teamabnormals.berry_good.core.registry.datapack.BGJukeboxSongs;
 import com.teamabnormals.blueprint.core.util.item.CreativeModeTabContentsPopulator;
 import com.teamabnormals.blueprint.core.util.registry.ItemSubRegistryHelper;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -11,8 +11,6 @@ import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.CreativeModeTab.TabVisibility;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.Blocks;
-import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.registries.DeferredHolder;
 
 import static com.teamabnormals.berry_good.core.registry.BGBlocks.GLOW_BERRY_BASKET;
@@ -20,12 +18,7 @@ import static com.teamabnormals.berry_good.core.registry.BGBlocks.SWEET_BERRY_BA
 import static net.minecraft.world.item.CreativeModeTabs.*;
 import static net.minecraft.world.item.crafting.Ingredient.of;
 
-@EventBusSubscriber(modid = BerryGood.MOD_ID, bus = EventBusSubscriber.Bus.MOD)
 public class BGItems {
-	@SubscribeEvent
-	public static void $(LoadThisClassEvent event) {
-	}
-
 	public static final ItemSubRegistryHelper HELPER = BerryGood.REGISTRY_HELPER.getItemSubHelper();
 
 	public static final DeferredHolder<Item, Item> SWEET_BERRY_MINCE = HELPER.createItem("sweet_berry_mince", () -> new Item(new Item.Properties().food(BGFoods.SWEET_BERRY_MINCE)));

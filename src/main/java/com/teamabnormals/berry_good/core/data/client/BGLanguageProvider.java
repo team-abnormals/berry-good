@@ -3,7 +3,7 @@ package com.teamabnormals.berry_good.core.data.client;
 import com.teamabnormals.berry_good.core.BerryGood;
 import com.teamabnormals.berry_good.core.registry.BGBlocks;
 import com.teamabnormals.berry_good.core.registry.BGItems;
-import com.teamabnormals.berry_good.core.registry.BGJukeboxSongs;
+import com.teamabnormals.berry_good.core.registry.datapack.BGJukeboxSongs;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceKey;

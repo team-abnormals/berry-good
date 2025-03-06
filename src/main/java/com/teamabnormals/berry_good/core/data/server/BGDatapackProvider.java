@@ -1,7 +1,7 @@
 package com.teamabnormals.berry_good.core.data.server;
 
 import com.teamabnormals.berry_good.core.BerryGood;
-import com.teamabnormals.berry_good.core.registry.BGJukeboxSongs;
+import com.teamabnormals.berry_good.core.registry.datapack.BGJukeboxSongs;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.core.RegistrySetBuilder;
 import net.minecraft.core.registries.Registries;

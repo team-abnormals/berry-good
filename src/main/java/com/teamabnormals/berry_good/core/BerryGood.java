@@ -63,7 +63,7 @@ public class BerryGood {
 		generator.addProvider(server, blockTags);
 		generator.addProvider(server, new BGItemTagsProvider(output, provider, blockTags.contentsGetter(), helper));
 		generator.addProvider(server, new BGRecipeProvider(output, provider));
-		generator.addProvider(server, BGLootTableProvider.create(output, provider));
+		generator.addProvider(server, new BGLootTableProvider(output, provider));
 		generator.addProvider(server, new BGDataMapProvider(output, provider));
 		generator.addProvider(server, new BGDataRemolderProvider(output, provider));
 		generator.addProvider(server, new BGAdvancementModifierProvider(output, provider));

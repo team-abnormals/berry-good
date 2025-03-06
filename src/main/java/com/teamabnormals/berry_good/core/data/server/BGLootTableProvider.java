@@ -1,6 +1,5 @@
 package com.teamabnormals.berry_good.core.data.server;
 
-import com.google.common.collect.ImmutableList;
 import com.teamabnormals.berry_good.core.BerryGood;
 import com.teamabnormals.berry_good.core.registry.BGBlocks;
 import net.minecraft.core.HolderLookup.Provider;
@@ -9,7 +8,6 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.data.loot.LootTableProvider;
-import net.minecraft.resources.ResourceKey;
 import net.minecraft.util.ProblemReporter;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Item;
@@ -29,17 +27,10 @@ import java.util.stream.Stream;
 
 public class BGLootTableProvider extends LootTableProvider {
 
-	public BGLootTableProvider(PackOutput output, Set<ResourceKey<LootTable>> requiredTables, List<SubProviderEntry> subProviders, CompletableFuture<Provider> registries) {
-		super(output, requiredTables, subProviders, registries);
-	}
-
-	public static BGLootTableProvider create(PackOutput output, CompletableFuture<Provider> provider) {
-		return new BGLootTableProvider(output,
-				BuiltInLootTables.all(),
-				ImmutableList.of(
-						new LootTableProvider.SubProviderEntry(BGBlockLoot::new, LootContextParamSets.BLOCK)
-				),
-				provider);
+	public BGLootTableProvider(PackOutput output, CompletableFuture<Provider> provider) {
+		super(output, BuiltInLootTables.all(), List.of(
+				new LootTableProvider.SubProviderEntry(BGBlockLoot::new, LootContextParamSets.BLOCK)
+		), provider);
 	}
 
 	@Override

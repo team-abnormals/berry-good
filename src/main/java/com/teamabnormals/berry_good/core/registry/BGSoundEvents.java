@@ -9,7 +9,7 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.registries.DeferredHolder;
 
 @EventBusSubscriber(modid = BerryGood.MOD_ID, bus = EventBusSubscriber.Bus.MOD)
-public class BGSounds {
+public class BGSoundEvents {
 	@SubscribeEvent
 	public static void $(LoadThisClassEvent event) {
 	}

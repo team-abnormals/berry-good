@@ -1,6 +1,7 @@
-package com.teamabnormals.berry_good.core.registry;
+package com.teamabnormals.berry_good.core.registry.datapack;
 
 import com.teamabnormals.berry_good.core.BerryGood;
+import com.teamabnormals.berry_good.core.registry.BGSoundEvents;
 import net.minecraft.Util;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
@@ -15,7 +16,7 @@ public class BGJukeboxSongs {
 	public static final ResourceKey<JukeboxSong> FOX = create("fox");
 
 	public static void bootstrap(BootstrapContext<JukeboxSong> context) {
-		register(context, FOX, BGSounds.MUSIC_DISC_FOX, 116, 2);
+		register(context, FOX, BGSoundEvents.MUSIC_DISC_FOX, 116, 2);
 	}
 
 	private static ResourceKey<JukeboxSong> create(String name) {
