@@ -1,5 +1,5 @@
 modLoader = "javafml"
-loaderVersion = "[4,)"
+loaderVersion = "[1,)"
 issueTrackerURL = "https://github.com/team-abnormals/berry-good/issues"
 license = "https://github.com/team-abnormals/berry-good/blob/main/LICENSE.txt"
 
@@ -8,7 +8,7 @@ license = "https://github.com/team-abnormals/berry-good/blob/main/LICENSE.txt"
 
 [[mods]]
     modId = "berry_good"
-    version = "${file.jarVersion}"
+    version = "${mod_version}"
     logoFile = "logo.png"
     itemIcon = "berry_good:sweet_berry_pips"
     configBackground = "minecraft:textures/block/spruce_log.png"
@@ -23,20 +23,20 @@ license = "https://github.com/team-abnormals/berry-good/blob/main/LICENSE.txt"
 [[dependencies.berry_good]]
     modId = "minecraft"
     mandatory = true
-    versionRange = "[1.21,1.21.1)"
+    versionRange = "[${mc_version}]"
     ordering = "AFTER"
     side = "BOTH"
 
 [[dependencies.berry_good]]
     modId = "neoforge"
     type = "required"
-    versionRange = "[21.0.0,21.2.0)"
+    versionRange = "[${neoforge},)"
     ordering = "AFTER"
     side = "BOTH"
 
 [[dependencies.berry_good]]
     modId = "blueprint"
     type = "required"
-    versionRange = "[8.0.0,)"
+    versionRange = "[${blueprint},)"
     ordering = "AFTER"
     side = "BOTH"

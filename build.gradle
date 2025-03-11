@@ -5,11 +5,11 @@ plugins {
     id "net.neoforged.gradle.userdev" version "7.0.182"
 }
 
-version = "${project.mcVersion}-${project.modVersion}"
+version = "${project.mc_version}-${project.mod_version}"
 group = "com.teamabnormals"
 
 base {
-    archivesName = project.modId
+    archivesName = project.mod_id
 }
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(21)
@@ -33,7 +33,7 @@ runs {
         modSources {
             add project.sourceSets.main
         }
-        arguments.addAll "--mod", "berry_good", "--all", "--output", file("src/generated/resources/").getAbsolutePath(), "--existing", file("src/main/resources/").getAbsolutePath(), "--existing-mod", "blueprint"
+        arguments.addAll "--mod", project.mod_id, "--all", "--output", file("src/generated/resources/").getAbsolutePath(), "--existing", file("src/main/resources/").getAbsolutePath(), "--existing-mod", "blueprint"
     }
 }
 
@@ -43,15 +43,15 @@ sourceSets.main.resources {
 
 dependencies {
     implementation "net.neoforged:neoforge:${project.neoforge}"
-    implementation("com.teamabnormals:blueprint:${project.mcVersion}-${project.blueprint}")
+    implementation("com.teamabnormals:blueprint:${project.mc_version}-${project.blueprint}")
 
-    compileOnly("mezz.jei:jei-${project.mcVersion}-neoforge-api:${project.jei}")
-    runtimeOnly("mezz.jei:jei-${project.mcVersion}-neoforge:${project.jei}")
+    compileOnly("mezz.jei:jei-${project.mc_version}-neoforge-api:${project.jei}")
+    runtimeOnly("mezz.jei:jei-${project.mc_version}-neoforge:${project.jei}")
 }
 
 subsystems {
     parchment {
-        minecraftVersion = "${project.mcVersion}"
+        minecraftVersion = "${project.mc_version}"
         mappingsVersion = "${project.parchment}"
     }
 }
@@ -62,14 +62,22 @@ repositories {
     maven { url = "https://modmaven.dev" }
 }
 
+tasks.withType(ProcessResources).configureEach {
+    var replaceProperties = [mod_version: mod_version, mc_version: mc_version, neoforge: neoforge, blueprint: blueprint]
+    inputs.properties replaceProperties
+    filesMatching(["META-INF/neoforge.mods.toml"]) {
+        expand replaceProperties
+    }
+}
+
 tasks.named("jar", Jar).configure {
     manifest {
         attributes([
-                "Specification-Title"     : project.modName,
+                "Specification-Title"     : project.mod_name,
                 "Specification-Vendor"    : "Team Abnormals",
                 "Specification-Version"   : "1",
-                "Implementation-Title"    : project.modName,
-                "Implementation-Version"  : project.modVersion,
+                "Implementation-Title"    : project.mod_name,
+                "Implementation-Version"  : project.mod_version,
                 "Implementation-Vendor"   : "Team Abnormals",
                 "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
         ])
