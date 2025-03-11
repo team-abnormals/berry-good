@@ -22,7 +22,7 @@ license = "https://github.com/team-abnormals/berry-good/blob/main/LICENSE.txt"
 
 [[dependencies.berry_good]]
     modId = "minecraft"
-    mandatory = true
+    type = "required"
     versionRange = "[${mc_version}]"
     ordering = "AFTER"
     side = "BOTH"
