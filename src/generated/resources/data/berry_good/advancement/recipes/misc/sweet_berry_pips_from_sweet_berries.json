@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "berry_good:sweet_berry_pips"
+        "recipe": "berry_good:sweet_berry_pips_from_sweet_berries"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "berry_good:sweet_berry_pips"
+      "berry_good:sweet_berry_pips_from_sweet_berries"
     ]
   }
 }

@@ -1,6 +1,6 @@
 {
   "values": [
-    "#forge:seeds/sweet_berry",
-    "#forge:seeds/glow_berry"
+    "#c:seeds/sweet_berry",
+    "#c:seeds/glow_berry"
   ]
 }

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "berry_good:glow_berry_pips"
+        "recipe": "berry_good:glow_berry_pips_from_glow_berries"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "berry_good:glow_berry_pips"
+      "berry_good:glow_berry_pips_from_glow_berries"
     ]
   }
 }

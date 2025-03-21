@@ -27,6 +27,7 @@ public class BGRecipeProvider extends BlueprintRecipeProvider {
 		storageRecipes(output, RecipeCategory.FOOD, Items.GLOW_BERRIES, RecipeCategory.DECORATIONS, BGBlocks.GLOW_BERRY_BASKET.get());
 
 		conversionRecipe(output, BGItems.GLOW_BERRY_PIPS.get(), Items.GLOW_BERRIES, null);
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, BGItems.SWEET_BERRY_MINCE.get()).requires(Items.SWEET_BERRIES).requires(Items.PORKCHOP).unlockedBy("has_sweet_berries", has(Items.SWEET_BERRIES)).save(output);
 		foodCookingRecipes(output, BGItems.SWEET_BERRY_MINCE.get(), BGItems.SWEET_BERRY_MEATBALLS.get());
 
 		conversionRecipe(output, BGItems.SWEET_BERRY_PIPS.get(), Items.SWEET_BERRIES, null);
