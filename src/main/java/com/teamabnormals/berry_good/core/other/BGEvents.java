@@ -27,7 +27,7 @@ public class BGEvents {
 	@SubscribeEvent
 	public static void onItemFinishUsing(LivingEntityUseItemEvent.Finish event) {
 		LivingEntity entity = event.getEntity();
-		if (!entity.level().isClientSide() && BGConfig.COMMON.glowBerriesGiveGlowing.get()) {
+		if (!entity.level().isClientSide() && event.getItem().is(Items.GLOW_BERRIES) && BGConfig.COMMON.glowBerriesGiveGlowing.get()) {
 			entity.addEffect(new MobEffectInstance(MobEffects.GLOWING, 300));
 		}
 	}
