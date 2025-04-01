@@ -3,7 +3,6 @@ package com.teamabnormals.berry_good.core.data.client;
 import com.teamabnormals.berry_good.core.BerryGood;
 import com.teamabnormals.berry_good.core.registry.BGSoundEvents;
 import net.minecraft.data.PackOutput;
-import net.minecraft.resources.ResourceLocation;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.common.data.SoundDefinitionsProvider;
 
@@ -15,6 +14,6 @@ public class BGSoundDefinitionsProvider extends SoundDefinitionsProvider {
 
 	@Override
 	public void registerSounds() {
-		this.add(BGSoundEvents.MUSIC_DISC_FOX.get(), definition().with(sound(ResourceLocation.fromNamespaceAndPath(BerryGood.MOD_ID, "records/fox")).stream()));
+		this.add(BGSoundEvents.MUSIC_DISC_FOX.get(), definition().with(sound(BerryGood.location("records/fox")).stream()));
 	}
 }

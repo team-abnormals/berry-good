@@ -19,16 +19,16 @@ import static net.minecraft.world.item.CreativeModeTabs.*;
 import static net.minecraft.world.item.crafting.Ingredient.of;
 
 public class BGItems {
-	public static final ItemSubRegistryHelper HELPER = BerryGood.REGISTRY_HELPER.getItemSubHelper();
+	public static final ItemSubRegistryHelper ITEMS = BerryGood.REGISTRY_HELPER.getItemSubHelper();
 
-	public static final DeferredHolder<Item, Item> SWEET_BERRY_MINCE = HELPER.createItem("sweet_berry_mince", () -> new Item(new Item.Properties().food(BGFoods.SWEET_BERRY_MINCE)));
-	public static final DeferredHolder<Item, Item> SWEET_BERRY_MEATBALLS = HELPER.createItem("sweet_berry_meatballs", () -> new Item(new Item.Properties().food(BGFoods.SWEET_BERRY_MEATBALLS)));
-	public static final DeferredHolder<Item, Item> SWEET_BERRY_PIPS = HELPER.createItem("sweet_berry_pips", () -> new ItemNameBlockItem(Blocks.SWEET_BERRY_BUSH, new Item.Properties()));
+	public static final DeferredHolder<Item, Item> SWEET_BERRY_MINCE = ITEMS.createItem("sweet_berry_mince", () -> new Item(new Item.Properties().food(BGFoods.SWEET_BERRY_MINCE)));
+	public static final DeferredHolder<Item, Item> SWEET_BERRY_MEATBALLS = ITEMS.createItem("sweet_berry_meatballs", () -> new Item(new Item.Properties().food(BGFoods.SWEET_BERRY_MEATBALLS)));
+	public static final DeferredHolder<Item, Item> SWEET_BERRY_PIPS = ITEMS.createItem("sweet_berry_pips", () -> new ItemNameBlockItem(Blocks.SWEET_BERRY_BUSH, new Item.Properties()));
 
-	public static final DeferredHolder<Item, Item> GLOW_BERRY_PIPS = HELPER.createItem("glow_berry_pips", () -> new ItemNameBlockItem(Blocks.CAVE_VINES, new Item.Properties()));
-	public static final DeferredHolder<Item, Item> GLOWGURT = HELPER.createItem("glowgurt", () -> new Item(new Item.Properties().stacksTo(1).food(BGFoods.GLOWGURT)));
+	public static final DeferredHolder<Item, Item> GLOW_BERRY_PIPS = ITEMS.createItem("glow_berry_pips", () -> new ItemNameBlockItem(Blocks.CAVE_VINES, new Item.Properties()));
+	public static final DeferredHolder<Item, Item> GLOWGURT = ITEMS.createItem("glowgurt", () -> new Item(new Item.Properties().stacksTo(1).food(BGFoods.GLOWGURT)));
 
-	public static final DeferredHolder<Item, Item> MUSIC_DISC_FOX = HELPER.createItem("music_disc_fox", () -> new Item(new Item.Properties().stacksTo(1).rarity(Rarity.RARE).jukeboxPlayable(BGJukeboxSongs.FOX)));
+	public static final DeferredHolder<Item, Item> MUSIC_DISC_FOX = ITEMS.createItem("music_disc_fox", () -> new Item(new Item.Properties().stacksTo(1).rarity(Rarity.RARE).jukeboxPlayable(BGJukeboxSongs.FOX)));
 
 	public static class BGFoods {
 		public static final FoodProperties SWEET_BERRY_MINCE = new FoodProperties.Builder().nutrition(5).saturationModifier(0.3F).build();

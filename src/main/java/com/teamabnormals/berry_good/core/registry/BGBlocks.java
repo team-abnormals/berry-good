@@ -11,10 +11,10 @@ import net.minecraft.world.level.material.MapColor;
 import net.neoforged.neoforge.registries.DeferredHolder;
 
 public class BGBlocks {
-	public static final BlockSubRegistryHelper HELPER = BerryGood.REGISTRY_HELPER.getBlockSubHelper();
+	public static final BlockSubRegistryHelper BLOCKS = BerryGood.REGISTRY_HELPER.getBlockSubHelper();
 
-	public static final DeferredHolder<Block, Block> SWEET_BERRY_BASKET = HELPER.createBlock("sweet_berry_basket", () -> new BlueprintDirectionalBlock(BGProperties.SWEET_BERRY_BASKET));
-	public static final DeferredHolder<Block, Block> GLOW_BERRY_BASKET = HELPER.createBlock("glow_berry_basket", () -> new BlueprintDirectionalBlock(BGProperties.GLOW_BERRY_BASKET));
+	public static final DeferredHolder<Block, Block> SWEET_BERRY_BASKET = BLOCKS.createBlock("sweet_berry_basket", () -> new BlueprintDirectionalBlock(BGProperties.SWEET_BERRY_BASKET));
+	public static final DeferredHolder<Block, Block> GLOW_BERRY_BASKET = BLOCKS.createBlock("glow_berry_basket", () -> new BlueprintDirectionalBlock(BGProperties.GLOW_BERRY_BASKET));
 
 	public static class BGProperties {
 		public static final Block.Properties SWEET_BERRY_BASKET = BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_RED).instrument(NoteBlockInstrument.BASS).strength(1.5F).sound(SoundType.WOOD).ignitedByLava();

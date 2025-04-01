@@ -9,11 +9,14 @@ import com.teamabnormals.berry_good.core.data.server.modifiers.BGAdvancementModi
 import com.teamabnormals.berry_good.core.data.server.tags.BGBlockTagsProvider;
 import com.teamabnormals.berry_good.core.data.server.tags.BGItemTagsProvider;
 import com.teamabnormals.berry_good.core.other.BGCompat;
+import com.teamabnormals.berry_good.core.registry.BGBlocks;
 import com.teamabnormals.berry_good.core.registry.BGItems;
+import com.teamabnormals.berry_good.core.registry.BGSoundEvents;
 import com.teamabnormals.blueprint.core.util.registry.RegistryHelper;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
+import net.minecraft.resources.ResourceLocation;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
@@ -32,7 +35,9 @@ public class BerryGood {
 	public static final RegistryHelper REGISTRY_HELPER = new RegistryHelper(MOD_ID);
 
 	public BerryGood(IEventBus bus, ModContainer container) {
-		REGISTRY_HELPER.register(bus);
+		BGBlocks.BLOCKS.register(bus);
+		BGItems.ITEMS.register(bus);
+		BGSoundEvents.SOUND_EVENTS.register(bus);
 
 		bus.addListener(this::commonSetup);
 		bus.addListener(this::dataSetup);
@@ -73,5 +78,9 @@ public class BerryGood {
 		generator.addProvider(client, new BGItemModelProvider(output, helper));
 		generator.addProvider(client, new BGLanguageProvider(output));
 		generator.addProvider(client, new BGSoundDefinitionsProvider(output, helper));
+	}
+
+	public static ResourceLocation location(String path) {
+		return ResourceLocation.fromNamespaceAndPath(MOD_ID, path);
 	}
 }
