@@ -1,10 +1,11 @@
 {
-  "block.berry_good.sweet_berry_bush_pips": "Semi di bacche dolci",
-
-  "item.berry_good.sweet_berry_pips": "Semi di bacche dolci",
-  "item.berry_good.sweet_berry_mince": "Bacche dolci tritate",
-  "item.berry_good.sweet_berry_meatballs": "Polpette di bacche dolci",
-
+  "block.berry_good.glow_berry_basket": "Cesto di bacce luminose",
+  "block.berry_good.sweet_berry_basket": "Cesto di bacche dolci",
+  "item.berry_good.glow_berry_pips": "Semi di bacche luminose",
+  "item.berry_good.glowgurt": "Lumigurt",
   "item.berry_good.music_disc_fox": "Disco musicale",
-  "item.berry_good.music_disc_fox.desc": "RENREN - Fox"
+  "item.berry_good.music_disc_fox.desc": "RENREN - Fox",
+  "item.berry_good.sweet_berry_meatballs": "Polpette di bacche dolci",
+  "item.berry_good.sweet_berry_mince": "Bacche dolci tritate",
+  "item.berry_good.sweet_berry_pips": "Semi di bacche dolci"
 }
