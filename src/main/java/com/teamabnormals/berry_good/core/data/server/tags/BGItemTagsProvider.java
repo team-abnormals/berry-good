@@ -26,7 +26,7 @@ public class BGItemTagsProvider extends ItemTagsProvider {
 	protected void addTags(Provider provider) {
 		this.tag(ItemTags.CHICKEN_FOOD).add(SWEET_BERRY_PIPS.get(), GLOW_BERRY_PIPS.get());
 		this.tag(ItemTags.PARROT_FOOD).add(SWEET_BERRY_PIPS.get(), GLOW_BERRY_PIPS.get());
-		this.tag(ItemTags.MEAT).add(SWEET_BERRY_MINCE.get(), SWEET_BERRY_PIPS.get());
+		this.tag(ItemTags.MEAT).add(SWEET_BERRY_MINCE.get(), SWEET_BERRY_MEATBALLS.get());
 
 		this.tag(Tags.Items.MUSIC_DISCS).add(MUSIC_DISC_FOX.get());
 
